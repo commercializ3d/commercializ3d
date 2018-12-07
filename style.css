@@ -212,6 +212,26 @@
     }
 }
 
+.GameBoard_WithdrawButton__21E9Y {
+    margin-right: 16px;
+}
+
+.GameBoard_User__asExI {
+
+}
+
+.GameBoard_EndRoundButton__1vC0d {
+
+}
+
+.GameBoard_Balance__26XAQ {
+    margin-right: 16px;
+}
+
+.GameBoard_TimeRemaining__2nR5e {
+    margin-right: 16px;
+}
+
 .GameBoard_GameCol__2RCvR {
     padding: 32px 16px;
     margin-left: 8%;
@@ -284,8 +304,7 @@
 }
 
 .BuyModal_BuyFormInput__2ZHMi {
-    margin-top: 32px;
-    margin-bottom: 32px;
+    margin-top: 16px;
 }
 
 .BuyModal_BuyFormInput__2ZHMi label {
@@ -297,6 +316,12 @@
     margin-bottom: 8px;
     margin-top: -2px;
     margin-left: 16px;
+}
+
+.BuyModal_BuyImage__2PRRV img {
+    width: 200px;
+    max-height: 220px;
+    margin-top: 16px;
 }
 
 .BuyModal_BuyInfo__Ej0uh {
@@ -327,7 +352,7 @@ hr.BuyModal_BuySeparator__18IXL {
 }
 
 .BuyModal_BuyDetail__2DN2g {
-    margin-top: 28px;
+    margin-top: 16px;
 }
 
 .BuyModal_BuyLabel__13KB2 {
