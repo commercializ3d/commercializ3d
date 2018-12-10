@@ -16200,7 +16200,7 @@ webpackJsonp([0],[
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	var ETHERSCAN_BASE_URL = "https://etherscan.io/address/";
-	var CONTRACT_ADDRESS = exports.CONTRACT_ADDRESS = "0x58169ba76c1ca471729fec4e793b3a946abd6adf";
+	var CONTRACT_ADDRESS = exports.CONTRACT_ADDRESS = "0xAd0CfaaA559E44714165FfFD16163614ac54FC74";
 	var ETHERSCAN_URL = exports.ETHERSCAN_URL = ETHERSCAN_BASE_URL + CONTRACT_ADDRESS;
 	var DEFAULT_PROVIDER = exports.DEFAULT_PROVIDER = infura.MAINNET_BASE_URL + infura.API_KEY;
 	var COMMERCIALIZ3D_ABI = exports.COMMERCIALIZ3D_ABI = abi.COMMERCIALIZ3D;
