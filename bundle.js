@@ -9877,11 +9877,11 @@ webpackJsonp([0],[
 	
 	var _App2 = _interopRequireDefault(_App);
 	
-	var _Rules = __webpack_require__(1212);
+	var _Rules = __webpack_require__(1213);
 	
 	var _Rules2 = _interopRequireDefault(_Rules);
 	
-	var _Game = __webpack_require__(1214);
+	var _Game = __webpack_require__(1215);
 	
 	var _Game2 = _interopRequireDefault(_Game);
 	
@@ -9956,6 +9956,10 @@ webpackJsonp([0],[
 	
 	var _Loading2 = _interopRequireDefault(_Loading);
 	
+	var _UnlockMetaMask = __webpack_require__(1212);
+	
+	var _UnlockMetaMask2 = _interopRequireDefault(_UnlockMetaMask);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var App = (_dec = (0, _reactCssModules2.default)(_App2.default), _dec(_class = function (_Component) {
@@ -9969,7 +9973,8 @@ webpackJsonp([0],[
 			_this.web3 = App.initWeb3();
 			_this.state = {
 				selectedAccount: "",
-				network: ""
+				network: "",
+				noWeb3: false
 			};
 	
 			_this.getAccount = _this.getAccount.bind(_this);
@@ -9997,18 +10002,29 @@ webpackJsonp([0],[
 			value: function getAccount() {
 				var instance = this;
 				var oldAccount = this.state.selectedAccount;
-				this.web3.eth.getAccounts(function (error, accounts) {
-					if (error) {
-						console.log(error);
-					} else {
-						if (accounts && accounts.length > 0) {
-							var newAccount = accounts[0];
-							if (oldAccount !== newAccount) {
-								if (oldAccount !== "") {
-									window.location.reload();
-								}
-								instance.setState({ selectedAccount: newAccount });
+				var web3 = this.web3;
+				web3.eth.getAccounts(function (error, accounts) {
+					if (accounts && accounts.length > 0) {
+						var newAccount = accounts[0];
+						if (oldAccount !== newAccount) {
+							if (oldAccount !== "") {
+								window.location.reload();
 							}
+							instance.setState({ selectedAccount: newAccount });
+						}
+					} else {
+						if (web3 && web3.currentProvider) {
+							web3.currentProvider.enable(function (error, accounts) {
+								if (accounts && accounts.length > 0) {
+									var _newAccount = accounts[0];
+									if (oldAccount !== _newAccount) {
+										if (oldAccount !== "") {
+											window.location.reload();
+										}
+										instance.setState({ selectedAccount: _newAccount });
+									}
+								}
+							});
 						}
 					}
 				});
@@ -10027,7 +10043,8 @@ webpackJsonp([0],[
 				var oldNetwork = this.state.network;
 				this.web3.eth.net.getNetworkType(function (error, result) {
 					if (error) {
-						console.log(error);
+						clearInterval(this.networkInterval);
+						instance.setState({ noWeb3: true });
 					} else {
 						var newNetwork = result;
 						if (oldNetwork !== newNetwork) {
@@ -10047,7 +10064,8 @@ webpackJsonp([0],[
 			value: function render() {
 				var _state = this.state,
 				    selectedAccount = _state.selectedAccount,
-				    network = _state.network;
+				    network = _state.network,
+				    noWeb3 = _state.noWeb3;
 	
 	
 				if (network) {
@@ -10067,6 +10085,8 @@ webpackJsonp([0],[
 							})
 						)
 					);
+				} else if (noWeb3) {
+					return _react2.default.createElement(_UnlockMetaMask2.default, null);
 				} else {
 					return _react2.default.createElement(_Loading2.default, null);
 				}
@@ -64072,13 +64092,91 @@ webpackJsonp([0],[
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactCssModules = __webpack_require__(698);
+	
+	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
+	
+	var _IncorrectNetwork = __webpack_require__(1211);
+	
+	var _IncorrectNetwork2 = _interopRequireDefault(_IncorrectNetwork);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var UnlockMetaMask = (_dec = (0, _reactCssModules2.default)(_IncorrectNetwork2.default), _dec(_class = function (_Component) {
+		(0, _inherits3.default)(UnlockMetaMask, _Component);
+	
+		function UnlockMetaMask(props) {
+			(0, _classCallCheck3.default)(this, UnlockMetaMask);
+			return (0, _possibleConstructorReturn3.default)(this, (UnlockMetaMask.__proto__ || (0, _getPrototypeOf2.default)(UnlockMetaMask)).call(this, props));
+		}
+	
+		(0, _createClass3.default)(UnlockMetaMask, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ styleName: 'IncorrectNetwork' },
+					_react2.default.createElement(
+						'h1',
+						null,
+						'No Web3 found'
+					),
+					_react2.default.createElement(
+						'p',
+						null,
+						'Please unlock your account or install a trusted web3 provider'
+					)
+				);
+			}
+		}]);
+		return UnlockMetaMask;
+	}(_react.Component)) || _class);
+	exports.default = UnlockMetaMask;
+
+/***/ }),
+/* 1213 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = undefined;
+	
+	var _getPrototypeOf = __webpack_require__(647);
+	
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+	
+	var _classCallCheck2 = __webpack_require__(652);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(653);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	var _possibleConstructorReturn2 = __webpack_require__(657);
+	
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+	
+	var _inherits2 = __webpack_require__(690);
+	
+	var _inherits3 = _interopRequireDefault(_inherits2);
+	
+	var _dec, _class;
+	
+	var _react = __webpack_require__(366);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
 	var _reactRouter = __webpack_require__(535);
 	
 	var _reactCssModules = __webpack_require__(698);
 	
 	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 	
-	var _Rules = __webpack_require__(1213);
+	var _Rules = __webpack_require__(1214);
 	
 	var _Rules2 = _interopRequireDefault(_Rules);
 	
@@ -64353,14 +64451,14 @@ webpackJsonp([0],[
 	exports.default = Rules;
 
 /***/ }),
-/* 1213 */
+/* 1214 */
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"RulesContainer":"Rules_RulesContainer__3Q9gW","BackButton":"Rules_BackButton__1QYbh","Rules":"Rules_Rules__3WPpP"};
 
 /***/ }),
-/* 1214 */
+/* 1215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64394,19 +64492,19 @@ webpackJsonp([0],[
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _GameBoard = __webpack_require__(1215);
+	var _GameBoard = __webpack_require__(1216);
 	
 	var _GameBoard2 = _interopRequireDefault(_GameBoard);
 	
-	var _queryString = __webpack_require__(1221);
+	var _queryString = __webpack_require__(1222);
 	
 	var qs = _interopRequireWildcard(_queryString);
 	
-	var _IncorrectNetwork = __webpack_require__(1223);
+	var _IncorrectNetwork = __webpack_require__(1224);
 	
 	var _IncorrectNetwork2 = _interopRequireDefault(_IncorrectNetwork);
 	
-	var _UnlockMetaMask = __webpack_require__(1224);
+	var _UnlockMetaMask = __webpack_require__(1212);
 	
 	var _UnlockMetaMask2 = _interopRequireDefault(_UnlockMetaMask);
 	
@@ -64460,7 +64558,7 @@ webpackJsonp([0],[
 	exports.default = Game;
 
 /***/ }),
-/* 1215 */
+/* 1216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64504,17 +64602,17 @@ webpackJsonp([0],[
 	
 	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 	
-	var _GameBoard = __webpack_require__(1216);
+	var _GameBoard = __webpack_require__(1217);
 	
 	var _GameBoard2 = _interopRequireDefault(_GameBoard);
 	
 	var _window = __webpack_require__(856);
 	
-	var _GameSquare = __webpack_require__(1217);
+	var _GameSquare = __webpack_require__(1218);
 	
 	var _GameSquare2 = _interopRequireDefault(_GameSquare);
 	
-	var _TimeRemaining = __webpack_require__(1218);
+	var _TimeRemaining = __webpack_require__(1219);
 	
 	var _TimeRemaining2 = _interopRequireDefault(_TimeRemaining);
 	
@@ -64522,7 +64620,7 @@ webpackJsonp([0],[
 	
 	var _SiteSidebar2 = _interopRequireDefault(_SiteSidebar);
 	
-	var _BuyModal = __webpack_require__(1219);
+	var _BuyModal = __webpack_require__(1220);
 	
 	var _BuyModal2 = _interopRequireDefault(_BuyModal);
 	
@@ -64802,14 +64900,14 @@ webpackJsonp([0],[
 	exports.default = GameBoard;
 
 /***/ }),
-/* 1216 */
+/* 1217 */
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"GameRow":"GameBoard_GameRow__Fl_2o","GameBlock":"GameBoard_GameBlock__2fzA9","WithdrawButton":"GameBoard_WithdrawButton__21E9Y","User":"GameBoard_User__asExI","EndRoundButton":"GameBoard_EndRoundButton__1vC0d","Balance":"GameBoard_Balance__26XAQ","TimeRemaining":"GameBoard_TimeRemaining__2nR5e","GameCol":"GameBoard_GameCol__2RCvR","GameColWrapper":"GameBoard_GameColWrapper__2is0_","GameTitle":"GameBoard_GameTitle__3kzSQ","GameBoard":"GameBoard_GameBoard__3jO9M","TileLabel":"GameBoard_TileLabel__BzBns","TilePriceLabel":"GameBoard_TilePriceLabel__30jIH","HiddenModal":"GameBoard_HiddenModal__93HT2","ActiveModal":"GameBoard_ActiveModal__3wAds","Jackpot":"GameBoard_Jackpot__1Ub6n","clear":"GameBoard_clear__2EbSf","clearfix":"GameBoard_clearfix__p_S0s"};
 
 /***/ }),
-/* 1217 */
+/* 1218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64849,7 +64947,7 @@ webpackJsonp([0],[
 	
 	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 	
-	var _GameBoard = __webpack_require__(1216);
+	var _GameBoard = __webpack_require__(1217);
 	
 	var _GameBoard2 = _interopRequireDefault(_GameBoard);
 	
@@ -64979,7 +65077,7 @@ webpackJsonp([0],[
 	exports.default = GameSquare;
 
 /***/ }),
-/* 1218 */
+/* 1219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -65019,7 +65117,7 @@ webpackJsonp([0],[
 	
 	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 	
-	var _GameBoard = __webpack_require__(1216);
+	var _GameBoard = __webpack_require__(1217);
 	
 	var _GameBoard2 = _interopRequireDefault(_GameBoard);
 	
@@ -65136,7 +65234,7 @@ webpackJsonp([0],[
 	exports.default = TimeRemaining;
 
 /***/ }),
-/* 1219 */
+/* 1220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -65176,7 +65274,7 @@ webpackJsonp([0],[
 	
 	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
 	
-	var _BuyModal = __webpack_require__(1220);
+	var _BuyModal = __webpack_require__(1221);
 	
 	var _BuyModal2 = _interopRequireDefault(_BuyModal);
 	
@@ -65564,18 +65662,18 @@ webpackJsonp([0],[
 	exports.default = BuyModal;
 
 /***/ }),
-/* 1220 */
+/* 1221 */
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 	module.exports = {"BuyModal":"BuyModal_BuyModal__1m4lf","BuyFormInput":"BuyModal_BuyFormInput__2ZHMi","BuyImage":"BuyModal_BuyImage__2PRRV","BuyInfo":"BuyModal_BuyInfo__Ej0uh","BuyTile":"BuyModal_BuyTile__2rCdh","OwnedBy":"BuyModal_OwnedBy__8uyVO","BuyPrice":"BuyModal_BuyPrice__3IYeM","BuyButton":"BuyModal_BuyButton__uIR_1","Error":"BuyModal_Error__28D70","BuySeparator":"BuyModal_BuySeparator__18IXL","PriceLabel":"BuyModal_PriceLabel__2bekl","BuyDetail":"BuyModal_BuyDetail__2DN2g","BuyLabel":"BuyModal_BuyLabel__13KB2"};
 
 /***/ }),
-/* 1221 */
+/* 1222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	const strictUriEncode = __webpack_require__(1222);
+	const strictUriEncode = __webpack_require__(1223);
 	const decodeComponent = __webpack_require__(1194);
 	
 	function encoderForArrayFormat(options) {
@@ -65808,7 +65906,7 @@ webpackJsonp([0],[
 
 
 /***/ }),
-/* 1222 */
+/* 1223 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -65816,7 +65914,7 @@ webpackJsonp([0],[
 
 
 /***/ }),
-/* 1223 */
+/* 1224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -65892,84 +65990,6 @@ webpackJsonp([0],[
 		return IncorrectNetwork;
 	}(_react.Component)) || _class);
 	exports.default = IncorrectNetwork;
-
-/***/ }),
-/* 1224 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.default = undefined;
-	
-	var _getPrototypeOf = __webpack_require__(647);
-	
-	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-	
-	var _classCallCheck2 = __webpack_require__(652);
-	
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-	
-	var _createClass2 = __webpack_require__(653);
-	
-	var _createClass3 = _interopRequireDefault(_createClass2);
-	
-	var _possibleConstructorReturn2 = __webpack_require__(657);
-	
-	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-	
-	var _inherits2 = __webpack_require__(690);
-	
-	var _inherits3 = _interopRequireDefault(_inherits2);
-	
-	var _dec, _class;
-	
-	var _react = __webpack_require__(366);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactCssModules = __webpack_require__(698);
-	
-	var _reactCssModules2 = _interopRequireDefault(_reactCssModules);
-	
-	var _IncorrectNetwork = __webpack_require__(1211);
-	
-	var _IncorrectNetwork2 = _interopRequireDefault(_IncorrectNetwork);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var UnlockMetaMask = (_dec = (0, _reactCssModules2.default)(_IncorrectNetwork2.default), _dec(_class = function (_Component) {
-		(0, _inherits3.default)(UnlockMetaMask, _Component);
-	
-		function UnlockMetaMask(props) {
-			(0, _classCallCheck3.default)(this, UnlockMetaMask);
-			return (0, _possibleConstructorReturn3.default)(this, (UnlockMetaMask.__proto__ || (0, _getPrototypeOf2.default)(UnlockMetaMask)).call(this, props));
-		}
-	
-		(0, _createClass3.default)(UnlockMetaMask, [{
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'div',
-					{ styleName: 'IncorrectNetwork' },
-					_react2.default.createElement(
-						'h1',
-						null,
-						'No Web3 found'
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						'Please unlock your account or install a trusted web3 provider'
-					)
-				);
-			}
-		}]);
-		return UnlockMetaMask;
-	}(_react.Component)) || _class);
-	exports.default = UnlockMetaMask;
 
 /***/ }),
 /* 1225 */
