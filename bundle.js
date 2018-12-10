@@ -9985,10 +9985,31 @@ webpackJsonp([0],[
 		(0, _createClass3.default)(App, [{
 			key: 'componentDidMount',
 			value: function componentDidMount() {
-				this.getNetwork();
-				this.getAccount();
-				this.initAccountPoll();
-				this.initNetworkPoll();
+				var instance = this;
+				var web3 = this.web3;
+				web3.eth.getAccounts(function (error, accounts) {
+					if (!accounts) {
+						if (web3 && web3.currentProvider) {
+							web3.currentProvider.enable(function (error, accounts) {
+								if (accounts) {
+									instance.getNetwork();
+									instance.initAccountPoll();
+									instance.initNetworkPoll();
+									instance.setState({ selectedAccount: accounts[0] });
+								} else {
+									instance.setState({ noWeb3: true });
+								}
+							});
+						} else {
+							instance.setState({ noWeb3: true });
+						}
+					} else {
+						instance.getNetwork();
+						instance.initAccountPoll();
+						instance.initNetworkPoll();
+						instance.setState({ selectedAccount: accounts[0] });
+					}
+				});
 			}
 		}, {
 			key: 'initAccountPoll',
@@ -10011,20 +10032,6 @@ webpackJsonp([0],[
 								window.location.reload();
 							}
 							instance.setState({ selectedAccount: newAccount });
-						}
-					} else {
-						if (web3 && web3.currentProvider) {
-							web3.currentProvider.enable(function (error, accounts) {
-								if (accounts && accounts.length > 0) {
-									var _newAccount = accounts[0];
-									if (oldAccount !== _newAccount) {
-										if (oldAccount !== "") {
-											window.location.reload();
-										}
-										instance.setState({ selectedAccount: _newAccount });
-									}
-								}
-							});
 						}
 					}
 				});
