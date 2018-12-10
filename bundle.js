@@ -10001,12 +10001,14 @@ webpackJsonp([0],[
 					if (error) {
 						console.log(error);
 					} else {
-						var newAccount = accounts[0];
-						if (oldAccount.toLowerCase() !== newAccount.toLowerCase()) {
-							if (oldAccount !== "") {
-								window.location.reload();
+						if (accounts && accounts.length > 0) {
+							var newAccount = accounts[0];
+							if (oldAccount !== newAccount) {
+								if (oldAccount !== "") {
+									window.location.reload();
+								}
+								instance.setState({ selectedAccount: newAccount });
 							}
-							instance.setState({ selectedAccount: newAccount });
 						}
 					}
 				});
@@ -10028,7 +10030,7 @@ webpackJsonp([0],[
 						console.log(error);
 					} else {
 						var newNetwork = result;
-						if (oldNetwork.toLowerCase() !== newNetwork.toLowerCase()) {
+						if (oldNetwork !== newNetwork) {
 							instance.setState({ network: newNetwork });
 						}
 					}
