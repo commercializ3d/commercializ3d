@@ -64755,7 +64755,11 @@ webpackJsonp([0],[
 						console.error(error);
 					} else {
 						var timeRemaining = parseInt(result, 10);
-						instance.setState({ timeRemaining: timeRemaining });
+						if (timeRemaining > 9999999999999999) {
+							instance.setState({ timeRemaining: 0 });
+						} else {
+							instance.setState({ timeRemaining: timeRemaining });
+						}
 					}
 				});
 			}
