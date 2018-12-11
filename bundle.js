@@ -9888,10 +9888,14 @@ webpackJsonp([0],[
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var routes = _react2.default.createElement(
-	  _reactRouter.Route,
-	  { component: _App2.default },
-	  _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Game2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/rules', component: _Rules2.default })
+	  _reactRouter.Router,
+	  { history: _reactRouter.browserHistory },
+	  _react2.default.createElement(
+	    _reactRouter.Route,
+	    { component: _App2.default },
+	    _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Game2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/rules', component: _Rules2.default })
+	  )
 	);
 	
 	/* containers */
