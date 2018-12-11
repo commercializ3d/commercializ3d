@@ -16167,7 +16167,9 @@ webpackJsonp([0],[
 			contractAbi: mainnet.COMMERCIALIZ3D_ABI,
 			contractAddress: mainnet.CONTRACT_ADDRESS,
 			defaultProvider: mainnet.DEFAULT_PROVIDER
-		}
+		},
+		defaultReferral: "0xB111DaBb8EdD8260B5c1E471945A62bE2eE24470",
+		defaultOwner: "0x0000000000000000000000000000000000000000"
 	};
 
 /***/ }),
@@ -64459,7 +64461,7 @@ webpackJsonp([0],[
 							_react2.default.createElement('br', null),
 							'Invite your friends to play and earn 5% of what they spend when they use your link.',
 							_react2.default.createElement('br', null),
-							'You will need ETH and a crypto browser to play Microverse.',
+							'You will need ETH and a crypto browser to play Commercializ3d.',
 							_react2.default.createElement('br', null),
 							'Stay tuned for updates and improvements to Commercializ3d.'
 						)
@@ -64780,7 +64782,7 @@ webpackJsonp([0],[
 						_react2.default.createElement('br', null),
 						'\u9080\u8BF7\u60A8\u7684\u670B\u53CB\u4EEC\u4F7F\u7528\u60A8\u7684\u94FE\u63A5\u4E00\u540C\u53C2\u4E0E\uFF0C\u5373\u53EF\u83B7\u5F97\u5176\u82B1\u8D39\u76845\uFF05\u4F5C\u4E3A\u5956\u52B1\u3002',
 						_react2.default.createElement('br', null),
-						'\u4F60\u9700\u8981\u4EE5\u592A\u5E01\u548C\u52A0\u5BC6\u6D4F\u89C8\u5668\u6765\u73A9Microverse\u3002',
+						'\u4F60\u9700\u8981\u4EE5\u592A\u5E01\u548C\u52A0\u5BC6\u6D4F\u89C8\u5668\u6765\u73A9Commercializ3d\u3002',
 						_react2.default.createElement('br', null),
 						'>\u8BF7\u7EE7\u7EED\u5173\u6CE8Commercializ3d\u7684\u66F4\u65B0\u548C\u6539\u8FDB\u3002'
 					)
@@ -64873,7 +64875,7 @@ webpackJsonp([0],[
 						_react2.default.createElement(
 							'h1',
 							null,
-							'TL;DR - How To Play'
+							'\u041A\u0430\u043A \u0438\u0433\u0440\u0430\u0442\u044C'
 						),
 						_react2.default.createElement(
 							'ul',
@@ -64884,7 +64886,7 @@ webpackJsonp([0],[
 								_react2.default.createElement(
 									'h3',
 									null,
-									'Buy a square'
+									'\u041A\u0443\u043F\u0438\u0442\u044C \u043A\u0432\u0430\u0434\u0440\u0430\u0442'
 								)
 							),
 							_react2.default.createElement(
@@ -64893,7 +64895,7 @@ webpackJsonp([0],[
 								_react2.default.createElement(
 									'h3',
 									null,
-									'There are 2 jackpots:'
+									'\u0415\u0441\u0442\u044C 2 \u0434\u0436\u0435\u043A\u043F\u043E\u0442\u0430:'
 								)
 							),
 							_react2.default.createElement(
@@ -64905,7 +64907,7 @@ webpackJsonp([0],[
 									_react2.default.createElement(
 										'h5',
 										null,
-										'1 jackpot is distributed to square owners'
+										'1 \u0434\u0436\u0435\u043A\u043F\u043E\u0442 \u0440\u0430\u0437\u0434\u0430\u0435\u0442\u0441\u044F \u0432\u043B\u0430\u0434\u0435\u043B\u044C\u0446\u0430\u043C \u043F\u043B\u043E\u0449\u0430\u0434\u0435\u0439'
 									)
 								),
 								_react2.default.createElement(
@@ -64914,7 +64916,7 @@ webpackJsonp([0],[
 									_react2.default.createElement(
 										'h5',
 										null,
-										'1 jackpot goes to the person who owns the cheapest square'
+										'1 \u0434\u0436\u0435\u043A\u043F\u043E\u0442 \u0434\u043E\u0441\u0442\u0430\u0435\u0442\u0441\u044F \u0447\u0435\u043B\u043E\u0432\u0435\u043A\u0443, \u043A\u043E\u0442\u043E\u0440\u043E\u043C\u0443 \u043F\u0440\u0438\u043D\u0430\u0434\u043B\u0435\u0436\u0438\u0442 \u0441\u0430\u043C\u044B\u0439 \u0434\u0435\u0448\u0435\u0432\u044B\u0439 \u043A\u0432\u0430\u0434\u0440\u0430\u0442'
 									)
 								)
 							)
@@ -64923,17 +64925,17 @@ webpackJsonp([0],[
 						_react2.default.createElement(
 							'h3',
 							null,
-							'Rules'
+							'\u043F\u0440\u0430\u0432\u0438\u043B\u0430'
 						),
 						_react2.default.createElement(
 							'p',
 							null,
-							'Commercializ3d is the ultimate P3D real estate game. Players buy and sell real estate in different housing blocks in the Commercializ3d world. Although the blocks are different, the real estate all starts with the same value.'
+							'Commercializ3d - \u043B\u0443\u0447\u0448\u0430\u044F \u0438\u0433\u0440\u0430 \u0434\u043B\u044F P3D \u0432 \u0441\u0444\u0435\u0440\u0435 \u043D\u0435\u0434\u0432\u0438\u0436\u0438\u043C\u043E\u0441\u0442\u0438. \u0418\u0433\u0440\u043E\u043A\u0438 \u043F\u043E\u043A\u0443\u043F\u0430\u044E\u0442 \u0438 \u043F\u0440\u043E\u0434\u0430\u044E\u0442 \u043D\u0435\u0434\u0432\u0438\u0436\u0438\u043C\u043E\u0441\u0442\u044C \u0432 \u0440\u0430\u0437\u043D\u044B\u0445 \u043A\u0432\u0430\u0440\u0442\u0430\u043B\u0430\u0445 \u0432 \u043C\u0438\u0440\u0435 Commercializ3d. \u0425\u043E\u0442\u044F \u0431\u043B\u043E\u043A\u0438 \u0440\u0430\u0437\u043D\u044B\u0435, \u043D\u0435\u0434\u0432\u0438\u0436\u0438\u043C\u043E\u0441\u0442\u044C \u043D\u0430\u0447\u0438\u043D\u0430\u0435\u0442\u0441\u044F \u0441 \u043E\u0434\u043D\u043E\u0439 \u0438 \u0442\u043E\u0439 \u0436\u0435 \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u0438.'
 						),
 						_react2.default.createElement(
 							'h3',
 							null,
-							'How to play:'
+							'\u041A\u0430\u043A \u0438\u0433\u0440\u0430\u0442\u044C:'
 						),
 						_react2.default.createElement(
 							'ul',
@@ -64941,43 +64943,43 @@ webpackJsonp([0],[
 							_react2.default.createElement(
 								'li',
 								null,
-								'At the beginning of the game, 24 housing are auctioned via Dutch auction. The price is set at 1 ether and drops towards 0.01 as time goes on. Once all the housing is sold, the round begins.'
+								'\u0412 \u043D\u0430\u0447\u0430\u043B\u0435 \u0438\u0433\u0440\u044B 24 \u0436\u0438\u043B\u044C\u044F \u043F\u0440\u043E\u0434\u0430\u043D\u044B \u0441 \u0430\u0443\u043A\u0446\u0438\u043E\u043D\u0430 \u0447\u0435\u0440\u0435\u0437 \u0433\u043E\u043B\u043B\u0430\u043D\u0434\u0441\u043A\u0438\u0439 \u0430\u0443\u043A\u0446\u0438\u043E\u043D. \u0426\u0435\u043D\u0430 \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u0430 \u043D\u0430 1 Ether \u0438 \u0441\u043E \u0432\u0440\u0435\u043C\u0435\u043D\u0435\u043C \u043F\u0430\u0434\u0430\u0435\u0442 \u0434\u043E 0,01. \u041A\u0430\u043A \u0442\u043E\u043B\u044C\u043A\u043E \u0432\u0441\u0435 \u0436\u0438\u043B\u044C\u0435 \u043F\u0440\u043E\u0434\u0430\u043D\u043E, \u043D\u0430\u0447\u0438\u043D\u0430\u0435\u0442\u0441\u044F \u0440\u0430\u0443\u043D\u0434.'
 							),
 							_react2.default.createElement(
 								'li',
 								null,
-								'During the round, squares are always for sale. The owner sets a listing price and pays a 10% of the listing price as a tax. You can set the price very low to pay lower taxes but then someone else can buy the property at the low price. These taxes fund the Commercializ3d economy. Roughly half goes towards the stimulus. The other half is distributed to the owners of the 24 squares.'
+								'\u0412 \u0442\u0435\u0447\u0435\u043D\u0438\u0435 \u0440\u0430\u0443\u043D\u0434\u0430 \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u044B \u0432\u0441\u0435\u0433\u0434\u0430 \u0432\u044B\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u044B \u043D\u0430 \u043F\u0440\u043E\u0434\u0430\u0436\u0443. \u0412\u043B\u0430\u0434\u0435\u043B\u0435\u0446 \u0443\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u0442 \u0446\u0435\u043D\u0443 \u043B\u0438\u0441\u0442\u0438\u043D\u0433\u0430 \u0438 \u043F\u043B\u0430\u0442\u0438\u0442 10% \u043E\u0442 \u0446\u0435\u043D\u044B \u043B\u0438\u0441\u0442\u0438\u043D\u0433\u0430 \u0432 \u043A\u0430\u0447\u0435\u0441\u0442\u0432\u0435 \u043D\u0430\u043B\u043E\u0433\u0430. \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C \u043E\u0447\u0435\u043D\u044C \u043D\u0438\u0437\u043A\u0443\u044E \u0446\u0435\u043D\u0443, \u0447\u0442\u043E\u0431\u044B \u043F\u043B\u0430\u0442\u0438\u0442\u044C \u0431\u043E\u043B\u0435\u0435 \u043D\u0438\u0437\u043A\u0438\u0435 \u043D\u0430\u043B\u043E\u0433\u0438, \u043D\u043E \u0442\u043E\u0433\u0434\u0430 \u043A\u0442\u043E-\u0442\u043E \u0434\u0440\u0443\u0433\u043E\u0439 \u043C\u043E\u0436\u0435\u0442 \u043A\u0443\u043F\u0438\u0442\u044C \u043D\u0435\u0434\u0432\u0438\u0436\u0438\u043C\u043E\u0441\u0442\u044C \u043F\u043E \u043D\u0438\u0437\u043A\u043E\u0439 \u0446\u0435\u043D\u0435. \u042D\u0442\u0438 \u043D\u0430\u043B\u043E\u0433\u0438 \u0444\u0438\u043D\u0430\u043D\u0441\u0438\u0440\u0443\u044E\u0442 \u044D\u043A\u043E\u043D\u043E\u043C\u0438\u043A\u0443 Commercializ3d. \u041F\u0440\u0438\u043C\u0435\u0440\u043D\u043E \u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0430 \u0438\u0434\u0435\u0442 \u043D\u0430 \u0441\u0442\u0438\u043C\u0443\u043B. \u0414\u0440\u0443\u0433\u0430\u044F \u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0430 \u0440\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u0430 \u0441\u0440\u0435\u0434\u0438 \u0432\u043B\u0430\u0434\u0435\u043B\u044C\u0446\u0435\u0432 24 \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u043E\u0432.'
 							),
 							_react2.default.createElement(
 								'li',
 								null,
-								'After all the squares have been bought via the auction, the round timer begins and the round ends when the timer hits 0. Each time taxes are paid, some more time is added to the timer (up to a maximum). Less time gets added to the timer as more taxes are paid.  The maximum starts at 12 hours and decreases by 1/2 for every 10 ether that is paid in taxes.'
+								'\u041F\u043E\u0441\u043B\u0435 \u0442\u043E\u0433\u043E, \u043A\u0430\u043A \u0432\u0441\u0435 \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u044B \u0431\u044B\u043B\u0438 \u043A\u0443\u043F\u043B\u0435\u043D\u044B \u0447\u0435\u0440\u0435\u0437 \u0430\u0443\u043A\u0446\u0438\u043E\u043D, \u0442\u0430\u0439\u043C\u0435\u0440 \u0440\u0430\u0443\u043D\u0434\u0430 \u043D\u0430\u0447\u0438\u043D\u0430\u0435\u0442\u0441\u044F, \u0438 \u0440\u0430\u0443\u043D\u0434 \u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F, \u043A\u043E\u0433\u0434\u0430 \u0442\u0430\u0439\u043C\u0435\u0440 \u0434\u043E\u0441\u0442\u0438\u0433\u0430\u0435\u0442 0. \u041A\u0430\u0436\u0434\u044B\u0439 \u0440\u0430\u0437, \u043A\u043E\u0433\u0434\u0430 \u0443\u043F\u043B\u0430\u0447\u0438\u0432\u0430\u044E\u0442\u0441\u044F \u043D\u0430\u043B\u043E\u0433\u0438, \u043A \u0442\u0430\u0439\u043C\u0435\u0440\u0443 \u0434\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u0435\u0449\u0435 \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u043E\u0435 \u0432\u0440\u0435\u043C\u044F (\u0434\u043E \u043C\u0430\u043A\u0441\u0438\u043C\u0443\u043C\u0430). \u041C\u0435\u043D\u044C\u0448\u0435 \u0432\u0440\u0435\u043C\u0435\u043D\u0438 \u0434\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043A \u0442\u0430\u0439\u043C\u0435\u0440\u0443, \u0442\u0430\u043A \u043A\u0430\u043A \u043F\u043B\u0430\u0442\u0438\u0442\u0441\u044F \u0431\u043E\u043B\u044C\u0448\u0435 \u043D\u0430\u043B\u043E\u0433\u043E\u0432. \u041C\u0430\u043A\u0441\u0438\u043C\u0443\u043C \u043D\u0430\u0447\u0438\u043D\u0430\u0435\u0442\u0441\u044F \u0441 12 \u0447\u0430\u0441\u043E\u0432 \u0438 \u0443\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442\u0441\u044F \u043D\u0430 1/2 \u0434\u043B\u044F \u043A\u0430\u0436\u0434\u044B\u0445 10 \u044D\u0444\u0438\u0440\u043E\u0432, \u0443\u043F\u043B\u0430\u0447\u0438\u0432\u0430\u0435\u043C\u044B\u0445 \u0432 \u0432\u0438\u0434\u0435 \u043D\u0430\u043B\u043E\u0433\u043E\u0432.'
 							),
 							_react2.default.createElement(
 								'li',
 								null,
-								'When the round ends, the half of the jackpoit is awarded to the owner of lowest price square and the other half is distribruted through the owners of the other squares with lower priced squares getting more of the jackpot.'
+								'\u041A\u043E\u0433\u0434\u0430 \u0440\u0430\u0443\u043D\u0434 \u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F, \u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0430 \u0434\u0436\u0435\u043A\u043F\u043E\u0442\u0430 \u043F\u0440\u0438\u0441\u0443\u0436\u0434\u0430\u0435\u0442\u0441\u044F \u0432\u043B\u0430\u0434\u0435\u043B\u044C\u0446\u0443 \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u0430 \u0441 \u043D\u0430\u0438\u043C\u0435\u043D\u044C\u0448\u0435\u0439 \u0446\u0435\u043D\u043E\u0439, \u0430 \u0434\u0440\u0443\u0433\u0430\u044F \u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0430 \u0440\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u044F\u0435\u0442\u0441\u044F \u0447\u0435\u0440\u0435\u0437 \u0432\u043B\u0430\u0434\u0435\u043B\u044C\u0446\u0435\u0432 \u0434\u0440\u0443\u0433\u0438\u0445 \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u043E\u0432, \u043F\u0440\u0438\u0447\u0435\u043C \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u044B \u0441 \u0431\u043E\u043B\u0435\u0435 \u043D\u0438\u0437\u043A\u043E\u0439 \u0446\u0435\u043D\u043E\u0439 \u043F\u043E\u043B\u0443\u0447\u0430\u044E\u0442 \u0431\u043E\u043B\u044C\u0448\u0435 \u0434\u0436\u0435\u043A\u043F\u043E\u0442\u0430.'
 							),
 							_react2.default.createElement(
 								'li',
 								null,
-								'Some of the jackpot is used to seed the next round, and then a new round begins.'
+								'\u0427\u0430\u0441\u0442\u044C \u0434\u0436\u0435\u043A\u043F\u043E\u0442\u0430 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\u0441\u044F \u0434\u043B\u044F \u043F\u043E\u0441\u0435\u0432\u0430 \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0433\u043E \u0440\u0430\u0443\u043D\u0434\u0430, \u0430 \u0437\u0430\u0442\u0435\u043C \u043D\u0430\u0447\u0438\u043D\u0430\u0435\u0442\u0441\u044F \u043D\u043E\u0432\u044B\u0439 \u0440\u0430\u0443\u043D\u0434.'
 							)
 						),
 						_react2.default.createElement(
 							'h3',
 							null,
-							'Overview:'
+							'\u041E\u0431\u0437\u043E\u0440:'
 						),
 						_react2.default.createElement(
 							'p',
 							null,
-							'There are two ways to play Commercializ3d. You can buy housing and get a cut of the Commercializ3d economy. The higher the value of your housing the bigger the cut of each transaction you get. At the end of each round, the lowest priced housing wins the jackpot. So if you time it right and are the lowest priced housing you can win the jackpot. Kind of similar to Fomo3d in a way.'
+							'\u0415\u0441\u0442\u044C \u0434\u0432\u0430 \u0441\u043F\u043E\u0441\u043E\u0431\u0430 \u0438\u0433\u0440\u0430\u0442\u044C \u0432 Commercializ3d. \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043A\u0443\u043F\u0438\u0442\u044C \u0436\u0438\u043B\u044C\u0435 \u0438 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u044D\u043A\u043E\u043D\u043E\u043C\u0438\u043A\u0443 Commercializ3d. \u0427\u0435\u043C \u0432\u044B\u0448\u0435 \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u044C \u0432\u0430\u0448\u0435\u0433\u043E \u0436\u0438\u043B\u044C\u044F, \u0442\u0435\u043C \u0431\u043E\u043B\u044C\u0448\u0435 \u0441\u043E\u043A\u0440\u0430\u0449\u0435\u043D\u0438\u0435 \u043A\u0430\u0436\u0434\u043E\u0439 \u0442\u0440\u0430\u043D\u0437\u0430\u043A\u0446\u0438\u0438, \u043A\u043E\u0442\u043E\u0440\u0443\u044E \u0432\u044B \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442\u0435. \u0412 \u043A\u043E\u043D\u0446\u0435 \u043A\u0430\u0436\u0434\u043E\u0433\u043E \u0440\u0430\u0443\u043D\u0434\u0430 \u0441\u0430\u043C\u043E\u0435 \u0434\u0435\u0448\u0435\u0432\u043E\u0435 \u0436\u0438\u043B\u044C\u0435 \u0432\u044B\u0438\u0433\u0440\u044B\u0432\u0430\u0435\u0442 \u0434\u0436\u0435\u043A\u043F\u043E\u0442. \u041F\u043E\u044D\u0442\u043E\u043C\u0443, \u0435\u0441\u043B\u0438 \u0432\u044B \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E \u0432\u044B\u0431\u0435\u0440\u0435\u0442\u0435 \u0432\u0440\u0435\u043C\u044F \u0438 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u0435 \u0436\u0438\u043B\u044C\u0435 \u043F\u043E \u0441\u0430\u043C\u044B\u043C \u043D\u0438\u0437\u043A\u0438\u043C \u0446\u0435\u043D\u0430\u043C, \u0432\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u0432\u044B\u0438\u0433\u0440\u0430\u0442\u044C \u0434\u0436\u0435\u043A\u043F\u043E\u0442. \u0412 \u043D\u0435\u043A\u043E\u0442\u043E\u0440\u043E\u043C \u0440\u043E\u0434\u0435 \u043F\u043E\u0445\u043E\u0436 \u043D\u0430 Fomo3d.'
 						),
 						_react2.default.createElement(
 							'h3',
 							null,
-							'Rules:'
+							'\u041F\u0440\u0430\u0432\u0438\u043B\u0430:'
 						),
 						_react2.default.createElement(
 							'p',
@@ -64988,54 +64990,54 @@ webpackJsonp([0],[
 								_react2.default.createElement(
 									'li',
 									null,
-									'Commercializ3d contains 24 squares.'
+									'Commercializ3d \u0441\u043E\u0434\u0435\u0440\u0436\u0438\u0442 24 \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u0430.'
 								),
 								_react2.default.createElement(
 									'li',
 									null,
-									'Every square is always for sale.'
+									'\u041A\u0430\u0436\u0434\u044B\u0439 \u043A\u0432\u0430\u0434\u0440\u0430\u0442 \u0432\u0441\u0435\u0433\u0434\u0430 \u043F\u0440\u043E\u0434\u0430\u0435\u0442\u0441\u044F.'
 								),
 								_react2.default.createElement(
 									'li',
 									null,
-									'At the start of each round all of the housing is sold via dutch auction where the price declines toward zero until the housing is sold.'
+									'\u0412 \u043D\u0430\u0447\u0430\u043B\u0435 \u043A\u0430\u0436\u0434\u043E\u0433\u043E \u0440\u0430\u0443\u043D\u0434\u0430 \u0432\u0441\u0435 \u0436\u0438\u043B\u044C\u0435 \u043F\u0440\u043E\u0434\u0430\u0435\u0442\u0441\u044F \u0447\u0435\u0440\u0435\u0437 \u0433\u043E\u043B\u043B\u0430\u043D\u0434\u0441\u043A\u0438\u0439 \u0430\u0443\u043A\u0446\u0438\u043E\u043D, \u0433\u0434\u0435 \u0446\u0435\u043D\u0430 \u0441\u043D\u0438\u0436\u0430\u0435\u0442\u0441\u044F \u0434\u043E \u043D\u0443\u043B\u044F, \u043F\u043E\u043A\u0430 \u0436\u0438\u043B\u044C\u0435 \u043D\u0435 \u0431\u0443\u0434\u0435\u0442 \u043F\u0440\u043E\u0434\u0430\u043D\u043E.'
 								),
 								_react2.default.createElement(
 									'li',
 									null,
-									'Landlords can change the price of their houses, but pay 10% tax on the new price.'
+									'\u0414\u043E\u043C\u043E\u0432\u043B\u0430\u0434\u0435\u043B\u044C\u0446\u044B \u043C\u043E\u0433\u0443\u0442 \u0438\u0437\u043C\u0435\u043D\u0438\u0442\u044C \u0446\u0435\u043D\u0443 \u0441\u0432\u043E\u0435\u0433\u043E \u0434\u043E\u043C\u0430, \u043D\u043E \u0437\u0430\u043F\u043B\u0430\u0442\u0438\u0442\u044C 10% \u043D\u0430\u043B\u043E\u0433 \u0441 \u043D\u043E\u0432\u043E\u0439 \u0446\u0435\u043D\u044B.'
 								),
 								_react2.default.createElement(
 									'li',
 									null,
-									'All transactions in Commercializ3d go through the Commercializ3d economy. Half goes to the stimulus and the other half goes to owners of housing.'
+									'\u0412\u0441\u0435 \u0442\u0440\u0430\u043D\u0437\u0430\u043A\u0446\u0438\u0438 \u0432 Commercializ3d \u043F\u0440\u043E\u0445\u043E\u0434\u044F\u0442 \u0447\u0435\u0440\u0435\u0437 \u044D\u043A\u043E\u043D\u043E\u043C\u0438\u043A\u0443 Commercializ3d. \u041F\u043E\u043B\u043E\u0432\u0438\u043D\u0430 \u0438\u0434\u0435\u0442 \u043D\u0430 \u0441\u0442\u0438\u043C\u0443\u043B, \u0430 \u0434\u0440\u0443\u0433\u0430\u044F \u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0430 - \u043D\u0430 \u0432\u043B\u0430\u0434\u0435\u043B\u044C\u0446\u0435\u0432 \u0436\u0438\u043B\u044C\u044F.'
 								),
 								_react2.default.createElement(
 									'li',
 									null,
-									'Once all housing is sold, the round begins and counts down from 12 hours.'
+									'\u041F\u043E\u0441\u043B\u0435 \u0442\u043E\u0433\u043E, \u043A\u0430\u043A \u0432\u0441\u0435 \u0436\u0438\u043B\u044C\u0435 \u043F\u0440\u043E\u0434\u0430\u043D\u043E, \u043D\u0430\u0447\u0438\u043D\u0430\u0435\u0442\u0441\u044F \u0440\u0430\u0443\u043D\u0434, \u043E\u0442\u0441\u0447\u0435\u0442 \u043A\u043E\u0442\u043E\u0440\u043E\u0433\u043E \u043D\u0430\u0447\u0438\u043D\u0430\u0435\u0442\u0441\u044F \u0441 12 \u0447\u0430\u0441\u043E\u0432.'
 								),
 								_react2.default.createElement(
 									'li',
 									null,
-									'Each time housing is purchased or the price is changed the timer is reset, starting with 12 hours and halving every 10 ETH that flow through Commercializ3d.'
+									'\u041A\u0430\u0436\u0434\u044B\u0439 \u0440\u0430\u0437, \u043A\u043E\u0433\u0434\u0430 \u043F\u0440\u0438\u043E\u0431\u0440\u0435\u0442\u0430\u0435\u0442\u0441\u044F \u0436\u0438\u043B\u044C\u0435 \u0438\u043B\u0438 \u043C\u0435\u043D\u044F\u0435\u0442\u0441\u044F \u0446\u0435\u043D\u0430, \u0442\u0430\u0439\u043C\u0435\u0440 \u0441\u0431\u0440\u0430\u0441\u044B\u0432\u0430\u0435\u0442\u0441\u044F, \u043D\u0430\u0447\u0438\u043D\u0430\u044F \u0441 12 \u0447\u0430\u0441\u043E\u0432 \u0438 \u0434\u0435\u043B\u044F \u043F\u043E\u043F\u043E\u043B\u0430\u043C \u043A\u0430\u0436\u0434\u044B\u0435 10 ETH, \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0440\u043E\u0445\u043E\u0434\u044F\u0442 \u0447\u0435\u0440\u0435\u0437 Commercializ3d.'
 								),
 								_react2.default.createElement(
 									'li',
 									null,
-									'At the end of the simulation, the player who owns the lowest price housing wins half of the jackpot (in the event of a tie, the winnings are split). The rest is distributed proportionally rest of the housing blocks (pro rata based on the inverse of the relative share of the total price of all squares)'
+									'\u0412 \u043A\u043E\u043D\u0446\u0435 \u0441\u0438\u043C\u0443\u043B\u044F\u0446\u0438\u0438 \u0438\u0433\u0440\u043E\u043A, \u043A\u043E\u0442\u043E\u0440\u043E\u043C\u0443 \u043F\u0440\u0438\u043D\u0430\u0434\u043B\u0435\u0436\u0438\u0442 \u0436\u0438\u043B\u044C\u0435 \u0441 \u043D\u0430\u0438\u043C\u0435\u043D\u044C\u0448\u0435\u0439 \u0446\u0435\u043D\u043E\u0439, \u0432\u044B\u0438\u0433\u0440\u044B\u0432\u0430\u0435\u0442 \u043F\u043E\u043B\u043E\u0432\u0438\u043D\u0443 \u0434\u0436\u0435\u043A\u043F\u043E\u0442\u0430 (\u0432 \u0441\u043B\u0443\u0447\u0430\u0435 \u043D\u0438\u0447\u044C\u0435\u0439 \u0432\u044B\u0438\u0433\u0440\u044B\u0448 \u0434\u0435\u043B\u0438\u0442\u0441\u044F). \u041E\u0441\u0442\u0430\u043B\u044C\u043D\u0430\u044F \u0447\u0430\u0441\u0442\u044C \u0440\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u044F\u0435\u0442\u0441\u044F \u043F\u0440\u043E\u043F\u043E\u0440\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E \u043E\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u043C \u0436\u0438\u043B\u0438\u0449\u043D\u044B\u043C \u0431\u043B\u043E\u043A\u0430\u043C (\u043F\u0440\u043E\u043F\u043E\u0440\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E \u043E\u0431\u0440\u0430\u0442\u043D\u043E\u043C\u0443 \u043E\u0442\u043D\u043E\u0448\u0435\u043D\u0438\u044E \u043E\u0442\u043D\u043E\u0441\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0439 \u0434\u043E\u043B\u0438 \u043E\u0431\u0449\u0435\u0439 \u0441\u0442\u043E\u0438\u043C\u043E\u0441\u0442\u0438 \u0432\u0441\u0435\u0445 \u043F\u043B\u043E\u0449\u0430\u0434\u0435\u0439).'
 								),
 								_react2.default.createElement(
 									'li',
 									null,
-									'A new round begins with ownership of housing unchanged.'
+									'\u041D\u043E\u0432\u044B\u0439 \u0440\u0430\u0443\u043D\u0434 \u043D\u0430\u0447\u0438\u043D\u0430\u0435\u0442\u0441\u044F \u0441 \u0432\u043B\u0430\u0434\u0435\u043D\u0438\u044F \u0436\u0438\u043B\u044C\u0435\u043C \u0431\u0435\u0437 \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u0439.'
 								)
 							)
 						),
 						_react2.default.createElement(
 							'h3',
 							null,
-							'Commercializ3d Economy:'
+							'Commercializ3d \u042D\u043A\u043E\u043D\u043E\u043C\u0438\u043A\u0430:'
 						),
 						_react2.default.createElement(
 							'p',
@@ -65046,59 +65048,59 @@ webpackJsonp([0],[
 								_react2.default.createElement(
 									'li',
 									null,
-									'40% to the stimulus'
+									'40% \u043D\u0430 \u0441\u0442\u0438\u043C\u0443\u043B'
 								),
 								_react2.default.createElement(
 									'li',
 									null,
-									'38% to current owners of squares'
+									'38% \u043D\u044B\u043D\u0435\u0448\u043D\u0438\u043C \u0432\u043B\u0430\u0434\u0435\u043B\u044C\u0446\u0430\u043C \u043F\u043B\u043E\u0449\u0430\u0434\u0435\u0439'
 								),
 								_react2.default.createElement(
 									'li',
 									null,
-									'12% to buy P3D'
+									'12%, \u0447\u0442\u043E\u0431\u044B \u043A\u0443\u043F\u0438\u0442\u044C P3D'
 								),
 								_react2.default.createElement(
 									'li',
 									null,
-									'5% to the referrer (if no referrer then this 5% also buys P3D)'
+									'5% \u0440\u0435\u0444\u0435\u0440\u0435\u0440\u0443 (\u0435\u0441\u043B\u0438 \u0440\u0435\u0444\u0435\u0440\u0435\u0440\u0430 \u043D\u0435\u0442, \u0442\u043E \u044D\u0442\u0438 5% \u0442\u0430\u043A\u0436\u0435 \u043F\u043E\u043A\u0443\u043F\u0430\u044E\u0442 P3D)'
 								)
 							)
 						),
 						_react2.default.createElement(
 							'h3',
 							null,
-							'Jackpot Splits:'
+							'\u0420\u0430\u0437\u0434\u0435\u043B\u0435\u043D\u0438\u0435 \u0434\u0436\u0435\u043A\u043F\u043E\u0442\u0430:'
 						),
 						_react2.default.createElement(
 							'p',
 							null,
-							'At the end of each round, the owner of the square with the lowest price gets 45% of the jackpot plus will be sent 25% of the P3D tokens held in this contract. The remaining 50% is distributed as follows:',
+							'\u0412 \u043A\u043E\u043D\u0446\u0435 \u043A\u0430\u0436\u0434\u043E\u0433\u043E \u0440\u0430\u0443\u043D\u0434\u0430 \u0432\u043B\u0430\u0434\u0435\u043B\u0435\u0446 \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u0430 \u0441 \u0441\u0430\u043C\u043E\u0439 \u043D\u0438\u0437\u043A\u043E\u0439 \u0446\u0435\u043D\u043E\u0439 \u043F\u043E\u043B\u0443\u0447\u0430\u0435\u0442 45% \u0434\u0436\u0435\u043A\u043F\u043E\u0442\u0430, \u043F\u043B\u044E\u0441 \u0435\u043C\u0443 \u0431\u0443\u0434\u0435\u0442 \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u043E 25% \u0442\u043E\u043A\u0435\u043D\u043E\u0432 P3D, \u0441\u043E\u0434\u0435\u0440\u0436\u0430\u0449\u0438\u0445\u0441\u044F \u0432 \u044D\u0442\u043E\u043C \u043A\u043E\u043D\u0442\u0440\u0430\u043A\u0442\u0435. \u041E\u0441\u0442\u0430\u0432\u0448\u0438\u0435\u0441\u044F 50% \u0440\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u044F\u044E\u0442\u0441\u044F \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u043C \u043E\u0431\u0440\u0430\u0437\u043E\u043C: '
+						),
+						_react2.default.createElement(
+							'ul',
+							null,
 							_react2.default.createElement(
-								'ul',
+								'li',
 								null,
-								_react2.default.createElement(
-									'li',
-									null,
-									'40% to the owners of squares, sorted by lowest price (plus any ETH dividends accrued by this contract holding P3D tokens)'
-								),
-								_react2.default.createElement(
-									'li',
-									null,
-									'10% to seed the next round'
-								)
+								'40% \u0432\u043B\u0430\u0434\u0435\u043B\u044C\u0446\u0430\u043C \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u043E\u0432, \u043E\u0442\u0441\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0435 \u043F\u043E \u0441\u0430\u043C\u043E\u0439 \u043D\u0438\u0437\u043A\u043E\u0439 \u0446\u0435\u043D\u0435 (\u043F\u043B\u044E\u0441 \u043B\u044E\u0431\u044B\u0435 \u0434\u0438\u0432\u0438\u0434\u0435\u043D\u0434\u044B ETH, \u043D\u0430\u0447\u0438\u0441\u043B\u0435\u043D\u043D\u044B\u0435 \u043F\u043E \u044D\u0442\u043E\u043C\u0443 \u043A\u043E\u043D\u0442\u0440\u0430\u043A\u0442\u0443 \u0441 \u0442\u043E\u043A\u0435\u043D\u0430\u043C\u0438 P3D)'
 							),
 							_react2.default.createElement(
-								'p',
+								'li',
 								null,
-								'The dividends held by this contract are distributed to owners of squares in addition to 40% of the jackpot'
-							),
+								'10% \u0434\u043B\u044F \u043F\u043E\u0441\u0435\u0432\u0430 \u0432 \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u043C \u0440\u0430\u0443\u043D\u0434\u0435'
+							)
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							'\u0414\u0438\u0432\u0438\u0434\u0435\u043D\u0434\u044B, \u0443\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u043C\u044B\u0435 \u043F\u043E \u044D\u0442\u043E\u043C\u0443 \u043A\u043E\u043D\u0442\u0440\u0430\u043A\u0442\u0443, \u0440\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u044F\u044E\u0442\u0441\u044F \u043C\u0435\u0436\u0434\u0443 \u0432\u043B\u0430\u0434\u0435\u043B\u044C\u0446\u0430\u043C\u0438 \u043A\u0432\u0430\u0434\u0440\u0430\u0442\u043E\u0432 \u0432 \u0434\u043E\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u0435 \u043A 40% \u0434\u0436\u0435\u043A\u043F\u043E\u0442\u0430.',
 							_react2.default.createElement('br', null),
-							'Invite your friends to play and earn 5% of what they spend when they use your link.',
+							'\u041F\u0440\u0438\u0433\u043B\u0430\u0441\u0438\u0442\u0435 \u0441\u0432\u043E\u0438\u0445 \u0434\u0440\u0443\u0437\u0435\u0439 \u043F\u043E\u0438\u0433\u0440\u0430\u0442\u044C \u0438 \u0437\u0430\u0440\u0430\u0431\u043E\u0442\u0430\u0439\u0442\u0435 5% \u043E\u0442 \u0442\u043E\u0433\u043E, \u0447\u0442\u043E \u043E\u043D\u0438 \u043F\u043E\u0442\u0440\u0430\u0442\u044F\u0442, \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u044F \u0432\u0430\u0448\u0443 \u0441\u0441\u044B\u043B\u043A\u0443.',
 							_react2.default.createElement('br', null),
-							'You will need ETH and a crypto browser to play Microverse.',
+							'\u0414\u043B\u044F \u0438\u0433\u0440\u044B \u0432 Commercializ3d \u0432\u0430\u043C \u043F\u043E\u043D\u0430\u0434\u043E\u0431\u0438\u0442\u0441\u044F ETH \u0438 \u043A\u0440\u0438\u043F\u0442\u043E\u0433\u0440\u0430\u0444\u0438\u0447\u0435\u0441\u043A\u0438\u0439 \u0431\u0440\u0430\u0443\u0437\u0435\u0440.',
 							_react2.default.createElement('br', null),
-							'Stay tuned for updates and improvements to Commercializ3d.'
+							'\u0421\u043B\u0435\u0434\u0438\u0442\u0435 \u0437\u0430 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u044F\u043C\u0438 \u0438 \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u044F\u043C\u0438 \u0432 Commercializ3d.'
 						)
 					)
 				);
@@ -65933,6 +65935,8 @@ webpackJsonp([0],[
 	
 	var _BuyModal2 = _interopRequireDefault(_BuyModal);
 	
+	var _config = __webpack_require__(857);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var BuyModal = (_dec = (0, _reactCssModules2.default)(_BuyModal2.default), _dec(_class = function (_Component) {
@@ -65955,7 +65959,7 @@ webpackJsonp([0],[
 				isAuction: props.isAuction,
 				errorMessage: "",
 				selectedAccount: props.selectedAccount,
-				owner: "0x0000000000000000000000000000000000000000"
+				owner: _config.config.defaultOwner
 			};
 	
 			_this.updateBuyPriceValue = _this.updateBuyPriceValue.bind(_this);
@@ -66029,13 +66033,13 @@ webpackJsonp([0],[
 				    owner = _state2.owner,
 				    selectedAccount = _state2.selectedAccount;
 	
-				var referral = this.state.referral ? this.state.referral : "0x0000000000000000000000000000000000000000";
+				var referral = this.state.referral ? this.state.referral : _config.config.defaultReferral;
 	
 				var price = parseFloat(this.state.price);
 				var tax = parseFloat((buyPrice * 0.1).toFixed(this.countDecimals(buyPrice) + 1));
 				var total = parseFloat((price + tax).toFixed(Math.max(this.countDecimals(price) + this.countDecimals(tax)))) * Math.pow(10, 18);
 	
-				if (owner === "0x0000000000000000000000000000000000000000") {
+				if (owner === _config.config.defaultOwner) {
 					contract.methods.buySquareAtAuction(tileIndex, "" + buyPrice * Math.pow(10, 18), referral).send({
 						value: total,
 						from: selectedAccount
@@ -66096,7 +66100,7 @@ webpackJsonp([0],[
 				var tax = parseFloat((buyPrice * 0.1).toFixed(this.countDecimals(buyPrice) + 1));
 				var total = parseFloat((price + tax).toFixed(Math.max(this.countDecimals(price) + this.countDecimals(tax))));
 	
-				var isOwned = owner !== "0x0000000000000000000000000000000000000000";
+				var isOwned = owner !== _config.config.defaultOwner;
 				var isOwnedByYou = isOwned && owner.toLowerCase() === selectedAccount.toLowerCase();
 				var displayOwner = owner;
 				var displayButton = "Buy";
