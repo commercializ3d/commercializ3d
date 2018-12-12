@@ -10064,7 +10064,7 @@ webpackJsonp([0],[
 				var oldNetwork = this.state.network;
 				this.web3.eth.net.getNetworkType(function (error, result) {
 					if (error) {
-						clearInterval(this.networkInterval);
+						clearInterval(instance.networkInterval);
 						instance.setState({ noWeb3: true });
 					} else {
 						var newNetwork = result;
@@ -65364,17 +65364,10 @@ webpackJsonp([0],[
 			key: 'componentWillMount',
 			value: function componentWillMount() {
 				var instance = this;
-				this.state.contract.methods.jackpot().call(function (error, result) {
-					if (error) {
-						console.error(error);
-					} else {
-						var jackpot = parseFloat(result) / Math.pow(10, 18);
-						instance.setState({ jackpot: jackpot });
-					}
-				});
-	
 				var address = this.state.selectedAccount;
-				this.state.contract.methods.payments(address).call(function (error, result) {
+				var contract = this.state.contract;
+	
+				contract.methods.payments(address).call(function (error, result) {
 					if (error) {
 						console.error(error);
 					} else {
@@ -65383,7 +65376,7 @@ webpackJsonp([0],[
 					}
 				});
 	
-				this.state.contract.methods.stage().call(function (error, result) {
+				contract.methods.stage().call(function (error, result) {
 					if (error) {
 						console.error(error);
 					} else {
@@ -65396,7 +65389,27 @@ webpackJsonp([0],[
 					}
 				});
 	
-				this.state.contract.methods.roundTimeRemaining().call(function (error, result) {
+				contract.methods.jackpot().call(function (error, result) {
+					if (error) {
+						console.error(error);
+					} else {
+						var jackpot = parseFloat(result) / Math.pow(10, 18);
+						if (jackpot === 0) {
+							contract.methods.nextJackpot().call(function (error, result) {
+								if (error) {
+									console.error(error);
+								} else {
+									var _jackpot = parseFloat(result) / Math.pow(10, 18);
+									instance.setState({ jackpot: _jackpot });
+								}
+							});
+						} else {
+							instance.setState({ jackpot: jackpot });
+						}
+					}
+				});
+	
+				contract.methods.roundTimeRemaining().call(function (error, result) {
 					if (error) {
 						console.error(error);
 					} else {
