@@ -65621,6 +65621,8 @@ webpackJsonp([0],[
 	
 	var _GameBoard2 = _interopRequireDefault(_GameBoard);
 	
+	var _config = __webpack_require__(857);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var GameSquare = (_dec = (0, _reactCssModules2.default)(_GameBoard2.default), _dec(_class = function (_Component) {
@@ -65641,10 +65643,13 @@ webpackJsonp([0],[
 				price: 0,
 				buyPrice: 0,
 				showModal: false,
-				modalIsOpen: false
+				modalIsOpen: false,
+				selectedAccount: props.selectedAccount,
+				owner: _config.config.defaultOwner
 			};
 	
 			_this.getPrice = _this.getPrice.bind(_this);
+			_this.getOwner = _this.getOwner.bind(_this);
 			return _this;
 		}
 	
@@ -65652,14 +65657,33 @@ webpackJsonp([0],[
 			key: 'componentDidMount',
 			value: function componentDidMount() {
 				this.getPrice();
+				this.getOwner();
+			}
+		}, {
+			key: 'getOwner',
+			value: function getOwner() {
+				var instance = this;
+				var _state = this.state,
+				    contract = _state.contract,
+				    index = _state.index;
+	
+	
+				contract.methods.squareToOwner(this.state.index).call(function (error, result) {
+					if (error) {
+						console.log(error);
+					} else {
+						var owner = result;
+						instance.setState({ owner: owner });
+					}
+				});
 			}
 		}, {
 			key: 'getPrice',
 			value: function getPrice() {
 				var instance = this;
-				var _state = this.state,
-				    contract = _state.contract,
-				    index = _state.index;
+				var _state2 = this.state,
+				    contract = _state2.contract,
+				    index = _state2.index;
 	
 	
 				contract.methods.squareToPrice(index).call(function (error, result) {
@@ -65687,16 +65711,23 @@ webpackJsonp([0],[
 			value: function render() {
 				var _this2 = this;
 	
-				var _state2 = this.state,
-				    loading = _state2.loading,
-				    price = _state2.price,
-				    index = _state2.index,
-				    imgUrl = _state2.imgUrl,
-				    isAuction = _state2.isAuction;
+				var _state3 = this.state,
+				    loading = _state3.loading,
+				    price = _state3.price,
+				    index = _state3.index,
+				    imgUrl = _state3.imgUrl,
+				    isAuction = _state3.isAuction,
+				    owner = _state3.owner,
+				    selectedAccount = _state3.selectedAccount;
+	
+	
+				var isOwned = owner !== _config.config.defaultOwner;
 	
 				var background = {
 					background: "url('" + imgUrl + "')",
-					backgroundSize: "cover"
+					backgroundSize: "cover",
+					border: owner === selectedAccount ? "4px solid green" : "",
+					padding: owner === selectedAccount ? "30px 16px" : "32px 16px"
 				};
 	
 				if (loading) {
@@ -65734,7 +65765,7 @@ webpackJsonp([0],[
 								_react2.default.createElement(
 									'p',
 									null,
-									isAuction ? "Bought" : this.state.price + " ETH"
+									isAuction && isOwned ? "Bought" : this.state.price + " ETH"
 								)
 							)
 						)
