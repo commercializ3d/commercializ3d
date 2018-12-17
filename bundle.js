@@ -65654,6 +65654,15 @@ webpackJsonp([0],[
 		}
 	
 		(0, _createClass3.default)(GameSquare, [{
+			key: 'componentWillReceiveProps',
+			value: function componentWillReceiveProps(props) {
+				var a = 0;
+				this.setState({
+					isAuction: props.isAuction,
+					selectedAccount: props.selectedAccount
+				});
+			}
+		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
 				this.getPrice();
@@ -65765,7 +65774,7 @@ webpackJsonp([0],[
 								_react2.default.createElement(
 									'p',
 									null,
-									isAuction && isOwned ? "Bought" : this.state.price + " ETH"
+									isAuction && isOwned ? "Sold" : this.state.price + " ETH"
 								)
 							)
 						)
