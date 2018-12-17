@@ -66351,7 +66351,8 @@ webpackJsonp([0],[
 					2: 'Matos Metropolis',
 					3: 'Lambo Land',
 					4: 'Mt. Gox Compound',
-					5: 'McAfee Island'
+					5: 'McAfee Island',
+					6: 'Mt. Gox Compound'
 				};
 	
 				var row = Math.floor(index / 4) + 1;
