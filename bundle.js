@@ -16245,7 +16245,7 @@ webpackJsonp([0],[
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	var ETHERSCAN_BASE_URL = "https://etherscan.io/address/";
-	var CONTRACT_ADDRESS = exports.CONTRACT_ADDRESS = "0xAd0CfaaA559E44714165FfFD16163614ac54FC74";
+	var CONTRACT_ADDRESS = exports.CONTRACT_ADDRESS = "0xac5a22aB40DefB782eC177760ccD3f699b472533";
 	var ETHERSCAN_URL = exports.ETHERSCAN_URL = ETHERSCAN_BASE_URL + CONTRACT_ADDRESS;
 	var DEFAULT_PROVIDER = exports.DEFAULT_PROVIDER = infura.MAINNET_BASE_URL + infura.API_KEY;
 	var COMMERCIALIZ3D_ABI = exports.COMMERCIALIZ3D_ABI = abi.COMMERCIALIZ3D;
@@ -65529,6 +65529,11 @@ webpackJsonp([0],[
 						{ styleName: 'GameBoard' },
 						_react2.default.createElement(
 							'div',
+							{ styleName: 'Warning' },
+							'There was an exception with the last contract, money has been returned to users. New contract is up. Good luck.'
+						),
+						_react2.default.createElement(
+							'div',
 							{ styleName: 'Explainer' },
 							'Commercializ3d is an experiment built on P3D.  Buy "real" estate and get a cut of all fees. Once the timer stops, half the jackpot goes to the cheapest piece of land and the other half is split by other land owners. Some of the jackpot is used to seed the next round.'
 						),
@@ -65586,7 +65591,7 @@ webpackJsonp([0],[
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"GameRow":"GameBoard_GameRow__Fl_2o","GameBlock":"GameBoard_GameBlock__2fzA9","WithdrawButton":"GameBoard_WithdrawButton__21E9Y","User":"GameBoard_User__asExI","EndRoundButton":"GameBoard_EndRoundButton__1vC0d","Balance":"GameBoard_Balance__26XAQ","TimeRemaining":"GameBoard_TimeRemaining__2nR5e","GameCol":"GameBoard_GameCol__2RCvR","GameColWrapper":"GameBoard_GameColWrapper__2is0_","GameTitle":"GameBoard_GameTitle__3kzSQ","GameBoard":"GameBoard_GameBoard__3jO9M","TileLabel":"GameBoard_TileLabel__BzBns","TilePriceLabel":"GameBoard_TilePriceLabel__30jIH","HiddenModal":"GameBoard_HiddenModal__93HT2","ActiveModal":"GameBoard_ActiveModal__3wAds","Time":"GameBoard_Time__wfqaz","Jackpot":"GameBoard_Jackpot__1Ub6n","TopBar":"GameBoard_TopBar__deRWp","clear":"GameBoard_clear__2EbSf","clearfix":"GameBoard_clearfix__p_S0s","Explainer":"GameBoard_Explainer__3wIjg"};
+	module.exports = {"GameRow":"GameBoard_GameRow__Fl_2o","GameBlock":"GameBoard_GameBlock__2fzA9","WithdrawButton":"GameBoard_WithdrawButton__21E9Y","User":"GameBoard_User__asExI","EndRoundButton":"GameBoard_EndRoundButton__1vC0d","Balance":"GameBoard_Balance__26XAQ","TimeRemaining":"GameBoard_TimeRemaining__2nR5e","GameCol":"GameBoard_GameCol__2RCvR","GameColWrapper":"GameBoard_GameColWrapper__2is0_","GameTitle":"GameBoard_GameTitle__3kzSQ","GameBoard":"GameBoard_GameBoard__3jO9M","TileLabel":"GameBoard_TileLabel__BzBns","TilePriceLabel":"GameBoard_TilePriceLabel__30jIH","HiddenModal":"GameBoard_HiddenModal__93HT2","ActiveModal":"GameBoard_ActiveModal__3wAds","Time":"GameBoard_Time__wfqaz","Jackpot":"GameBoard_Jackpot__1Ub6n","TopBar":"GameBoard_TopBar__deRWp","clear":"GameBoard_clear__2EbSf","clearfix":"GameBoard_clearfix__p_S0s","Explainer":"GameBoard_Explainer__3wIjg","Warning":"GameBoard_Warning__12Bkx"};
 
 /***/ }),
 /* 1220 */
