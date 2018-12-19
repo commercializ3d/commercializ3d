@@ -16194,7 +16194,7 @@ webpackJsonp([0],[
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 	
 	var ETHERSCAN_BASE_URL = "https://ropsten.etherscan.io/address/";
-	var CONTRACT_ADDRESS = exports.CONTRACT_ADDRESS = "0x6887AD54bb06F8c72b7690c1e5A6bd9a73610961";
+	var CONTRACT_ADDRESS = exports.CONTRACT_ADDRESS = "0x59A6B34F2591Dd2889A7cC7fFC1C0e5bCAA21153";
 	var ETHERSCAN_URL = exports.ETHERSCAN_URL = ETHERSCAN_BASE_URL + CONTRACT_ADDRESS;
 	var DEFAULT_PROVIDER = exports.DEFAULT_PROVIDER = infura.ROPSTEN_BASE_URL + infura.API_KEY;
 	var COMMERCIALIZ3D_ABI = exports.COMMERCIALIZ3D_ABI = abi.COMMERCIALIZ3D;
