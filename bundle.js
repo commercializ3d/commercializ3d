@@ -65650,7 +65650,7 @@ webpackJsonp([0],[
 				isAuction: props.isAuction,
 				imgUrl: props.imgUrl,
 				contract: props.contract,
-				index: 4 * (parseInt(props.col) - 1) + parseInt(props.row),
+				index: 6 * (parseInt(props.col) - 1) + parseInt(props.row),
 				col: props.col,
 				price: 0,
 				buyPrice: 0,
