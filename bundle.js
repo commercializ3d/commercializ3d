@@ -65298,7 +65298,7 @@ webpackJsonp([0],[
 				referral: props.referral,
 				jackpot: 0,
 				balance: 0,
-				imgUrl: 0,
+				color: 0,
 				timeRemaining: 0,
 				isAuction: false
 			};
@@ -65346,8 +65346,8 @@ webpackJsonp([0],[
 			}
 		}, {
 			key: 'showBuyModal',
-			value: function showBuyModal(tileIndex, price, imgUrl) {
-				this.setState({ show: true, tileIndex: tileIndex, price: price, imgUrl: imgUrl });
+			value: function showBuyModal(tileIndex, price, color) {
+				this.setState({ show: true, tileIndex: tileIndex, price: price, color: color });
 			}
 		}, {
 			key: 'hideBuyModal',
@@ -65425,19 +65425,9 @@ webpackJsonp([0],[
 		}, {
 			key: 'render',
 			value: function render() {
-				var bogandoff = [{ url: "https://i.imgur.com/nw3bkbr.jpg" }, { url: "https://i.imgur.com/sLPYR82.jpg" }, { url: "https://i.imgur.com/3IuLUMF.jpg" }, { url: "https://i.imgur.com/1bACqJq.jpg" }];
+				var colors = [{ color: "rgba(25,118,210, 0.5)" }, { color: "rgba(25,118,210, 0.5)" }, { color: "rgba(25,118,210, 0.5)" }, { color: "rgba(25,118,210, 0.5)" }];
 	
-				var matos = [{ url: "https://i.imgur.com/LywV0CG.jpg" }, { url: "https://i.imgur.com/DvRhon0.jpg" }, { url: "https://i.imgur.com/ghNQwKb.png" }, { url: "https://i.imgur.com/VK43eQS.jpg" }];
-	
-				var lambo = [{ url: "https://i.imgur.com/Fvk2uLW.jpg" }, { url: "https://i.imgur.com/Pyv8CLB.jpg" }, { url: "https://i.imgur.com/5cvgF1C.jpg" }, { url: "https://i.imgur.com/HhQ7vtF.jpg" }];
-	
-				var balina = [{ url: "https://i.imgur.com/fhxiBUx.jpg" }, { url: "https://i.imgur.com/TsRPhdj.jpg" }, { url: "https://i.imgur.com/NsTvbxw.jpg" }, { url: "https://i.imgur.com/6r1Yg8E.jpg" }];
-	
-				var mcAfee = [{ url: "https://i.imgur.com/sP0mOzx.jpg" }, { url: "https://i.imgur.com/6X9n4yL.jpg" }, { url: "https://i.imgur.com/TPsu2Kl.jpg" }, { url: "https://i.imgur.com/ybfXm36.jpg" }];
-	
-				var mtGox = [{ url: "https://i.imgur.com/Ct4L30d.jpg" }, { url: "https://i.imgur.com/kTlX2OM.jpg" }, { url: "https://i.imgur.com/FS1fJ2s.png" }, { url: "https://i.imgur.com/j30sUGd.jpg" }];
-	
-				var rows = [{ title: 'Bogandoff Tower Block', cols: bogandoff }, { title: 'Matos Metropolis', cols: matos }, { title: 'Lambo Land', cols: lambo }, { title: 'Balina Bay', cols: balina }, { title: 'McAfee Island', cols: mcAfee }, { title: 'Mt. Gox Compound', cols: mtGox }];
+				var rows = [{ title: '1', cols: colors }, { title: '2', cols: colors }, { title: '3', cols: colors }, { title: '4', cols: colors }, { title: '5', cols: colors }, { title: '6', cols: colors }];
 	
 				var instance = this;
 				var _state = this.state,
@@ -65449,7 +65439,7 @@ webpackJsonp([0],[
 				    jackpot = _state.jackpot,
 				    balance = _state.balance,
 				    timeRemaining = _state.timeRemaining,
-				    imgUrl = _state.imgUrl,
+				    color = _state.color,
 				    isAuction = _state.isAuction,
 				    selectedAccount = _state.selectedAccount;
 	
@@ -65516,36 +65506,37 @@ webpackJsonp([0],[
 					_react2.default.createElement(
 						'div',
 						{ styleName: 'GameBoard' },
-						rows.map(function (row, i) {
-							return _react2.default.createElement(
-								'div',
-								{ styleName: 'GameRow', key: i },
-								_react2.default.createElement(
+						_react2.default.createElement(
+							'div',
+							{ styleName: 'Explainer' },
+							'Commercializ3d is an experiment built on P3D.  Buy "real" estate and get a cut of all fees. Once the timer stops, half the jackpot goes to the cheapest piece of land and the other half is split by other land owners. Some of the jackpot is used to seed the next round.'
+						),
+						_react2.default.createElement(
+							'div',
+							null,
+							rows.map(function (row, i) {
+								return _react2.default.createElement(
 									'div',
-									{ styleName: 'GameTitle' },
+									{ styleName: 'GameRow', key: i },
 									_react2.default.createElement(
-										'p',
-										null,
-										row.title
+										'div',
+										{ styleName: 'GameBlock' },
+										row.cols.map(function (col, j) {
+											return _react2.default.createElement(_GameSquare2.default, {
+												showBuyModal: instance.showBuyModal,
+												key: j,
+												col: j + 1,
+												row: i + 1,
+												isAuction: isAuction,
+												selectedAccount: selectedAccount,
+												contract: contract,
+												color: col.color });
+										}),
+										_react2.default.createElement('div', { styleName: 'clear' })
 									)
-								),
-								_react2.default.createElement(
-									'div',
-									{ styleName: 'GameBlock' },
-									row.cols.map(function (col, j) {
-										return _react2.default.createElement(_GameSquare2.default, {
-											showBuyModal: instance.showBuyModal,
-											key: j,
-											col: j + 1,
-											row: i + 1,
-											isAuction: isAuction,
-											selectedAccount: selectedAccount,
-											contract: contract, data: col });
-									}),
-									_react2.default.createElement('div', { styleName: 'clear' })
-								)
-							);
-						})
+								);
+							})
+						)
 					),
 					_react2.default.createElement(
 						'div',
@@ -65559,7 +65550,7 @@ webpackJsonp([0],[
 							referral: referral,
 							tileIndex: tileIndex,
 							selectedAccount: selectedAccount,
-							imgUrl: imgUrl
+							color: color
 						}) : _react2.default.createElement('div', null)
 					)
 				);
@@ -65574,7 +65565,7 @@ webpackJsonp([0],[
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"GameRow":"GameBoard_GameRow__Fl_2o","GameBlock":"GameBoard_GameBlock__2fzA9","WithdrawButton":"GameBoard_WithdrawButton__21E9Y","User":"GameBoard_User__asExI","EndRoundButton":"GameBoard_EndRoundButton__1vC0d","Balance":"GameBoard_Balance__26XAQ","TimeRemaining":"GameBoard_TimeRemaining__2nR5e","GameCol":"GameBoard_GameCol__2RCvR","GameColWrapper":"GameBoard_GameColWrapper__2is0_","GameTitle":"GameBoard_GameTitle__3kzSQ","GameBoard":"GameBoard_GameBoard__3jO9M","TileLabel":"GameBoard_TileLabel__BzBns","TilePriceLabel":"GameBoard_TilePriceLabel__30jIH","HiddenModal":"GameBoard_HiddenModal__93HT2","ActiveModal":"GameBoard_ActiveModal__3wAds","Jackpot":"GameBoard_Jackpot__1Ub6n","clear":"GameBoard_clear__2EbSf","clearfix":"GameBoard_clearfix__p_S0s"};
+	module.exports = {"GameRow":"GameBoard_GameRow__Fl_2o","GameBlock":"GameBoard_GameBlock__2fzA9","WithdrawButton":"GameBoard_WithdrawButton__21E9Y","User":"GameBoard_User__asExI","EndRoundButton":"GameBoard_EndRoundButton__1vC0d","Balance":"GameBoard_Balance__26XAQ","TimeRemaining":"GameBoard_TimeRemaining__2nR5e","GameCol":"GameBoard_GameCol__2RCvR","GameColWrapper":"GameBoard_GameColWrapper__2is0_","GameTitle":"GameBoard_GameTitle__3kzSQ","GameBoard":"GameBoard_GameBoard__3jO9M","TileLabel":"GameBoard_TileLabel__BzBns","TilePriceLabel":"GameBoard_TilePriceLabel__30jIH","HiddenModal":"GameBoard_HiddenModal__93HT2","ActiveModal":"GameBoard_ActiveModal__3wAds","Jackpot":"GameBoard_Jackpot__1Ub6n","clear":"GameBoard_clear__2EbSf","clearfix":"GameBoard_clearfix__p_S0s","Explainer":"GameBoard_Explainer__3wIjg"};
 
 /***/ }),
 /* 1220 */
@@ -65636,9 +65627,9 @@ webpackJsonp([0],[
 			_this.state = {
 				loading: true,
 				isAuction: props.isAuction,
-				imgUrl: props.data.url,
+				color: props.color,
 				contract: props.contract,
-				index: 4 * (parseInt(props.row) - 1) + parseInt(props.col),
+				index: 4 * (parseInt(props.col) - 1) + parseInt(props.row),
 				col: props.col,
 				price: 0,
 				buyPrice: 0,
@@ -65724,7 +65715,7 @@ webpackJsonp([0],[
 				    loading = _state3.loading,
 				    price = _state3.price,
 				    index = _state3.index,
-				    imgUrl = _state3.imgUrl,
+				    color = _state3.color,
 				    isAuction = _state3.isAuction,
 				    owner = _state3.owner,
 				    selectedAccount = _state3.selectedAccount;
@@ -65733,10 +65724,8 @@ webpackJsonp([0],[
 				var isOwned = owner !== _config.config.defaultOwner;
 	
 				var background = {
-					background: "url('" + imgUrl + "')",
-					backgroundSize: "cover",
-					border: owner === selectedAccount ? "4px solid green" : "",
-					padding: owner === selectedAccount ? "30px 16px" : "32px 16px"
+					// background: color,
+					border: owner === selectedAccount ? "4px solid #43a047" : ""
 				};
 	
 				if (loading) {
@@ -65766,7 +65755,7 @@ webpackJsonp([0],[
 						_react2.default.createElement(
 							'div',
 							{ style: background, styleName: 'GameCol', onClick: function onClick() {
-									return _this2.props.showBuyModal(index, price, imgUrl);
+									return _this2.props.showBuyModal(index, price, color);
 								} },
 							_react2.default.createElement(
 								'span',
@@ -66008,7 +65997,7 @@ webpackJsonp([0],[
 				referral: props.referral,
 				buyPrice: 0,
 				validInput: false,
-				imgUrl: props.imgUrl,
+				color: props.color,
 				isAuction: props.isAuction,
 				errorMessage: "",
 				selectedAccount: props.selectedAccount,
@@ -66016,7 +66005,6 @@ webpackJsonp([0],[
 			};
 	
 			_this.updateBuyPriceValue = _this.updateBuyPriceValue.bind(_this);
-			_this.getTileNameForIndex = _this.getTileNameForIndex.bind(_this);
 			_this.buyTile = _this.buyTile.bind(_this);
 			return _this;
 		}
@@ -66143,7 +66131,7 @@ webpackJsonp([0],[
 				    tileIndex = _state3.tileIndex,
 				    buyPrice = _state3.buyPrice,
 				    owner = _state3.owner,
-				    imgUrl = _state3.imgUrl,
+				    color = _state3.color,
 				    isAuction = _state3.isAuction,
 				    errorMessage = _state3.errorMessage,
 				    selectedAccount = _state3.selectedAccount;
@@ -66218,8 +66206,8 @@ webpackJsonp([0],[
 										'h5',
 										{ className: 'modal-title', id: 'exampleModalLongTitle' },
 										displayButton,
-										' Square - ',
-										this.getTileNameForIndex(tileIndex)
+										' Square - #',
+										tileIndex
 									),
 									_react2.default.createElement(
 										'button',
@@ -66248,11 +66236,6 @@ webpackJsonp([0],[
 										'div',
 										{ styleName: 'BuyFormInput' },
 										buyForm,
-										_react2.default.createElement(
-											'div',
-											{ className: 'left', styleName: 'BuyImage' },
-											_react2.default.createElement('img', { src: imgUrl })
-										),
 										_react2.default.createElement(
 											'div',
 											{ className: 'right', styleName: 'BuyDetail' },
@@ -66351,23 +66334,6 @@ webpackJsonp([0],[
 						)
 					)
 				);
-			}
-		}, {
-			key: 'getTileNameForIndex',
-			value: function getTileNameForIndex(index) {
-				var map = {
-					1: 'Bogandoff Tower Block',
-					2: 'Matos Metropolis',
-					3: 'Lambo Land',
-					4: 'Mt. Gox Compound',
-					5: 'McAfee Island',
-					6: 'Mt. Gox Compound'
-				};
-	
-				var row = Math.floor(index / 4) + 1;
-				var col = index % 4;
-	
-				return map[row] + " #" + col;
 			}
 		}]);
 		return BuyModal;
