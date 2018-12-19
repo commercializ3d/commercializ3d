@@ -16034,7 +16034,7 @@ webpackJsonp([0],[
 							_react2.default.createElement(
 								'p',
 								null,
-								'Be a real ethstate mogul. Commercialize your P3D.'
+								'Be a real ethstate mogul. Commercialize your ETH.'
 							)
 						),
 						_react2.default.createElement('div', { className: 'clear' })
@@ -16063,7 +16063,7 @@ webpackJsonp([0],[
 						_react2.default.createElement(
 							'div',
 							null,
-							_react2.default.createElement('input', { type: 'text', value: "https://commercializ3e.github.io?ref=" + selectedAccount, readOnly: true })
+							_react2.default.createElement('input', { type: 'text', value: "https://commercializ3d.github.io?ref=" + selectedAccount, readOnly: true })
 						)
 					),
 					_react2.default.createElement(
