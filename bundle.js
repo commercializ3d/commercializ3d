@@ -65299,6 +65299,7 @@ webpackJsonp([0],[
 				jackpot: 0,
 				balance: 0,
 				color: 0,
+				imgUrl: 0,
 				timeRemaining: 0,
 				isAuction: false
 			};
@@ -65346,8 +65347,8 @@ webpackJsonp([0],[
 			}
 		}, {
 			key: 'showBuyModal',
-			value: function showBuyModal(tileIndex, price, color) {
-				this.setState({ show: true, tileIndex: tileIndex, price: price, color: color });
+			value: function showBuyModal(tileIndex, price, imgUrl) {
+				this.setState({ show: true, tileIndex: tileIndex, price: price, imgUrl: imgUrl });
 			}
 		}, {
 			key: 'hideBuyModal',
@@ -65425,9 +65426,21 @@ webpackJsonp([0],[
 		}, {
 			key: 'render',
 			value: function render() {
-				var colors = [{ color: "rgba(25,118,210, 0.5)" }, { color: "rgba(25,118,210, 0.5)" }, { color: "rgba(25,118,210, 0.5)" }, { color: "rgba(25,118,210, 0.5)" }];
+				var colors = [{ color: "" }, { color: "" }, { color: "" }, { color: "" }];
 	
-				var rows = [{ title: '1', cols: colors }, { title: '2', cols: colors }, { title: '3', cols: colors }, { title: '4', cols: colors }, { title: '5', cols: colors }, { title: '6', cols: colors }];
+				var row1 = [{ imgUrl: "https://i.imgur.com/nQuLjfS.png" }, { imgUrl: "https://i.imgur.com/l5ulQNS.jpg" }, { imgUrl: "https://i.imgur.com/ZE1GLOi.png" }, { imgUrl: "https://i.imgur.com/oUX7t45.png" }];
+	
+				var row2 = [{ imgUrl: "https://i.imgur.com/UQFsxfj.png" }, { imgUrl: "https://i.imgur.com/46klBj5.png" }, { imgUrl: "https://i.imgur.com/5dKpUPn.jpg" }, { imgUrl: "https://i.imgur.com/PgxRm9X.png" }];
+	
+				var row3 = [{ imgUrl: "https://i.imgur.com/gQfCCYS.jpg" }, { imgUrl: "https://i.imgur.com/ZPQWyYq.jpg" }, { imgUrl: "https://i.imgur.com/K4T7FzU.png" }, { imgUrl: "https://i.imgur.com/X6tud99.jpg" }];
+	
+				var row4 = [{ imgUrl: "https://i.imgur.com/kJBnl9f.jpg" }, { imgUrl: "https://i.imgur.com/asaIPtM.png" }, { imgUrl: "https://i.imgur.com/HartkeP.jpg" }, { imgUrl: "https://i.imgur.com/EYoDXD7.jpg" }];
+	
+				var row5 = [{ imgUrl: "https://i.imgur.com/u72Cw1p.jpg" }, { imgUrl: "https://i.imgur.com/rns9mMg.png" }, { imgUrl: "https://i.imgur.com/14pRKk2.png" }, { imgUrl: "https://i.imgur.com/zoTmb7S.png" }];
+	
+				var row6 = [{ imgUrl: "https://i.imgur.com/HkOXc9F.png" }, { imgUrl: "https://i.imgur.com/JuNp5ir.png" }, { imgUrl: "https://i.imgur.com/kKStSAo.png" }, { imgUrl: "https://i.imgur.com/CChMM2E.png" }];
+	
+				var rows = [{ title: '1', cols: colors, imgs: row1 }, { title: '2', cols: colors, imgs: row2 }, { title: '3', cols: colors, imgs: row3 }, { title: '4', cols: colors, imgs: row4 }, { title: '5', cols: colors, imgs: row5 }, { title: '6', cols: colors, imgs: row6 }];
 	
 				var instance = this;
 				var _state = this.state,
@@ -65439,7 +65452,7 @@ webpackJsonp([0],[
 				    jackpot = _state.jackpot,
 				    balance = _state.balance,
 				    timeRemaining = _state.timeRemaining,
-				    color = _state.color,
+				    imgUrl = _state.imgUrl,
 				    isAuction = _state.isAuction,
 				    selectedAccount = _state.selectedAccount;
 	
@@ -65529,7 +65542,7 @@ webpackJsonp([0],[
 									_react2.default.createElement(
 										'div',
 										{ styleName: 'GameBlock' },
-										row.cols.map(function (col, j) {
+										row.imgs.map(function (col, j) {
 											return _react2.default.createElement(_GameSquare2.default, {
 												showBuyModal: instance.showBuyModal,
 												key: j,
@@ -65538,7 +65551,7 @@ webpackJsonp([0],[
 												isAuction: isAuction,
 												selectedAccount: selectedAccount,
 												contract: contract,
-												color: col.color });
+												imgUrl: col.imgUrl });
 										}),
 										_react2.default.createElement('div', { styleName: 'clear' })
 									)
@@ -65558,7 +65571,7 @@ webpackJsonp([0],[
 							referral: referral,
 							tileIndex: tileIndex,
 							selectedAccount: selectedAccount,
-							color: color
+							imgUrl: imgUrl
 						}) : _react2.default.createElement('div', null)
 					)
 				);
@@ -65635,7 +65648,7 @@ webpackJsonp([0],[
 			_this.state = {
 				loading: true,
 				isAuction: props.isAuction,
-				color: props.color,
+				imgUrl: props.imgUrl,
 				contract: props.contract,
 				index: 4 * (parseInt(props.col) - 1) + parseInt(props.row),
 				col: props.col,
@@ -65655,7 +65668,6 @@ webpackJsonp([0],[
 		(0, _createClass3.default)(GameSquare, [{
 			key: 'componentWillReceiveProps',
 			value: function componentWillReceiveProps(props) {
-				var a = 0;
 				this.setState({
 					isAuction: props.isAuction,
 					selectedAccount: props.selectedAccount
@@ -65723,7 +65735,7 @@ webpackJsonp([0],[
 				    loading = _state3.loading,
 				    price = _state3.price,
 				    index = _state3.index,
-				    color = _state3.color,
+				    imgUrl = _state3.imgUrl,
 				    isAuction = _state3.isAuction,
 				    owner = _state3.owner,
 				    selectedAccount = _state3.selectedAccount;
@@ -65732,7 +65744,8 @@ webpackJsonp([0],[
 				var isOwned = owner !== _config.config.defaultOwner;
 	
 				var background = {
-					// background: color,
+					background: "url(" + imgUrl + ")",
+					backgroundSize: "cover",
 					border: owner === selectedAccount ? "4px solid #43a047" : ""
 				};
 	
@@ -65763,7 +65776,7 @@ webpackJsonp([0],[
 						_react2.default.createElement(
 							'div',
 							{ style: background, styleName: 'GameCol', onClick: function onClick() {
-									return _this2.props.showBuyModal(index, price, color);
+									return _this2.props.showBuyModal(index, price, imgUrl);
 								} },
 							_react2.default.createElement(
 								'span',
@@ -66005,7 +66018,7 @@ webpackJsonp([0],[
 				referral: props.referral,
 				buyPrice: 0,
 				validInput: false,
-				color: props.color,
+				imgUrl: props.imgUrl,
 				isAuction: props.isAuction,
 				errorMessage: "",
 				selectedAccount: props.selectedAccount,
@@ -66139,7 +66152,7 @@ webpackJsonp([0],[
 				    tileIndex = _state3.tileIndex,
 				    buyPrice = _state3.buyPrice,
 				    owner = _state3.owner,
-				    color = _state3.color,
+				    imgUrl = _state3.imgUrl,
 				    isAuction = _state3.isAuction,
 				    errorMessage = _state3.errorMessage,
 				    selectedAccount = _state3.selectedAccount;
@@ -66244,6 +66257,11 @@ webpackJsonp([0],[
 										'div',
 										{ styleName: 'BuyFormInput' },
 										buyForm,
+										_react2.default.createElement(
+											'div',
+											{ className: 'left', styleName: 'BuyImage' },
+											_react2.default.createElement('img', { src: imgUrl })
+										),
 										_react2.default.createElement(
 											'div',
 											{ className: 'right', styleName: 'BuyDetail' },
