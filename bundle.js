@@ -65447,13 +65447,9 @@ webpackJsonp([0],[
 				var timeLeft = void 0;
 				if (isAuction) {
 					timeLeft = _react2.default.createElement(
-						'div',
-						{ className: 'left' },
-						_react2.default.createElement(
-							'p',
-							null,
-							'Auction Mode'
-						)
+						'p',
+						null,
+						'Auction Mode'
 					);
 				} else {
 					if (timeRemaining > 0) {
@@ -65465,7 +65461,7 @@ webpackJsonp([0],[
 							_react2.default.createElement(_TimeRemaining2.default, { timeRemaining: timeRemaining, isAuction: isAuction }),
 							_react2.default.createElement(
 								'button',
-								{ styleName: 'EndRoundButton', className: 'left btn-danger', onClick: instance.endRound },
+								{ styleName: 'EndRoundButton', className: 'right btn-danger', onClick: instance.endRound },
 								'End Round'
 							)
 						);
@@ -65476,29 +65472,41 @@ webpackJsonp([0],[
 					null,
 					_react2.default.createElement(
 						'div',
-						{ styleName: 'Jackpot' },
+						{ styleName: 'TopBar' },
 						_react2.default.createElement(
 							'div',
 							null,
 							_react2.default.createElement(
-								'p',
-								{ className: 'left', styleName: 'Balance' },
-								'Balance: ',
-								balance.toFixed(4),
-								' ETH'
+								'div',
+								{ styleName: 'User' },
+								_react2.default.createElement(
+									'p',
+									{ className: 'left', styleName: 'Balance' },
+									'Balance: ',
+									balance.toFixed(4),
+									' ETH'
+								),
+								balance > 0 ? _react2.default.createElement(
+									'button',
+									{ styleName: 'WithdrawButton', className: 'left btn-success', onClick: instance.withdraw },
+									'Withdraw'
+								) : _react2.default.createElement('div', null)
 							),
-							balance > 0 ? _react2.default.createElement(
-								'button',
-								{ styleName: 'WithdrawButton', className: 'left btn-success', onClick: instance.withdraw },
-								'Withdraw'
-							) : _react2.default.createElement('div', null),
-							timeLeft,
 							_react2.default.createElement(
-								'p',
-								{ className: 'right' },
-								'Jackpot: ',
-								jackpot.toFixed(4),
-								' ETH'
+								'div',
+								{ styleName: 'Time' },
+								timeLeft
+							),
+							_react2.default.createElement(
+								'div',
+								{ styleName: 'Jackpot' },
+								_react2.default.createElement(
+									'p',
+									null,
+									'Jackpot: ',
+									jackpot.toFixed(4),
+									' ETH'
+								)
 							),
 							_react2.default.createElement('div', { className: 'clear' })
 						)
@@ -65565,7 +65573,7 @@ webpackJsonp([0],[
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"GameRow":"GameBoard_GameRow__Fl_2o","GameBlock":"GameBoard_GameBlock__2fzA9","WithdrawButton":"GameBoard_WithdrawButton__21E9Y","User":"GameBoard_User__asExI","EndRoundButton":"GameBoard_EndRoundButton__1vC0d","Balance":"GameBoard_Balance__26XAQ","TimeRemaining":"GameBoard_TimeRemaining__2nR5e","GameCol":"GameBoard_GameCol__2RCvR","GameColWrapper":"GameBoard_GameColWrapper__2is0_","GameTitle":"GameBoard_GameTitle__3kzSQ","GameBoard":"GameBoard_GameBoard__3jO9M","TileLabel":"GameBoard_TileLabel__BzBns","TilePriceLabel":"GameBoard_TilePriceLabel__30jIH","HiddenModal":"GameBoard_HiddenModal__93HT2","ActiveModal":"GameBoard_ActiveModal__3wAds","Jackpot":"GameBoard_Jackpot__1Ub6n","clear":"GameBoard_clear__2EbSf","clearfix":"GameBoard_clearfix__p_S0s","Explainer":"GameBoard_Explainer__3wIjg"};
+	module.exports = {"GameRow":"GameBoard_GameRow__Fl_2o","GameBlock":"GameBoard_GameBlock__2fzA9","WithdrawButton":"GameBoard_WithdrawButton__21E9Y","User":"GameBoard_User__asExI","EndRoundButton":"GameBoard_EndRoundButton__1vC0d","Balance":"GameBoard_Balance__26XAQ","TimeRemaining":"GameBoard_TimeRemaining__2nR5e","GameCol":"GameBoard_GameCol__2RCvR","GameColWrapper":"GameBoard_GameColWrapper__2is0_","GameTitle":"GameBoard_GameTitle__3kzSQ","GameBoard":"GameBoard_GameBoard__3jO9M","TileLabel":"GameBoard_TileLabel__BzBns","TilePriceLabel":"GameBoard_TilePriceLabel__30jIH","HiddenModal":"GameBoard_HiddenModal__93HT2","ActiveModal":"GameBoard_ActiveModal__3wAds","Time":"GameBoard_Time__wfqaz","Jackpot":"GameBoard_Jackpot__1Ub6n","TopBar":"GameBoard_TopBar__deRWp","clear":"GameBoard_clear__2EbSf","clearfix":"GameBoard_clearfix__p_S0s","Explainer":"GameBoard_Explainer__3wIjg"};
 
 /***/ }),
 /* 1220 */
@@ -65901,7 +65909,7 @@ webpackJsonp([0],[
 				if (isAuction) {
 					return _react2.default.createElement(
 						'div',
-						{ className: 'left' },
+						{ styleName: 'TimeRemaining' },
 						_react2.default.createElement(
 							'p',
 							null,
@@ -65909,11 +65917,11 @@ webpackJsonp([0],[
 						)
 					);
 				} else if (!h || !m || !s) {
-					return _react2.default.createElement('div', { className: 'left' });
+					return _react2.default.createElement('div', null);
 				} else {
 					return _react2.default.createElement(
 						'div',
-						{ ref: 'countdown', className: 'left', styleName: 'TimeRemaining' },
+						{ ref: 'countdown', styleName: 'TimeRemaining' },
 						_react2.default.createElement(
 							'p',
 							null,
