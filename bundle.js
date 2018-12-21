@@ -10003,7 +10003,7 @@ webpackJsonp([0],[
 				var web3 = this.web3;
 				web3.eth.getAccounts(function (error, accounts) {
 					if (!accounts) {
-						if (web3 && web3.currentProvider) {
+						if (web3 && web3.currentProvider && web3.currentProvider.host !== _config.config["main"].defaultProvider) {
 							web3.currentProvider.enable(function (error, accounts) {
 								if (accounts) {
 									instance.getNetwork();
@@ -15998,6 +15998,37 @@ webpackJsonp([0],[
 	
 				var contractEtherscanUrl = network ? _config.config[network].etherscanUrl : "";
 	
+				var referral = _react2.default.createElement('div', null);
+				if (selectedAccount) {
+					referral = _react2.default.createElement(
+						'div',
+						{ styleName: 'Referral' },
+						_react2.default.createElement(
+							'div',
+							null,
+							_react2.default.createElement(
+								'label',
+								{ styleName: 'ReferralLabel' },
+								'Referral Link'
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							null,
+							_react2.default.createElement(
+								'small',
+								null,
+								'Share and earn 5% on all taxes paid by anyone who uses your link'
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							null,
+							_react2.default.createElement('input', { type: 'text', value: "https://commercializ3d.github.io?ref=" + selectedAccount, readOnly: true })
+						)
+					);
+				}
+	
 				return _react2.default.createElement(
 					'div',
 					{ styleName: 'SiteSidebar', className: open ? 'Open' : '' },
@@ -16034,38 +16065,14 @@ webpackJsonp([0],[
 							_react2.default.createElement(
 								'p',
 								null,
-								'Be a real ethstate mogul. Commercialize your ETH.'
+								'Be a real ethstate mogul. ',
+								_react2.default.createElement('br', null),
+								' Commercialize your ETH.'
 							)
 						),
 						_react2.default.createElement('div', { className: 'clear' })
 					),
-					_react2.default.createElement(
-						'div',
-						{ styleName: 'Referral' },
-						_react2.default.createElement(
-							'div',
-							null,
-							_react2.default.createElement(
-								'label',
-								{ styleName: 'ReferralLabel' },
-								'Referral Link'
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							null,
-							_react2.default.createElement(
-								'small',
-								null,
-								'Share and earn 5% on all taxes paid by anyone who uses your link'
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							null,
-							_react2.default.createElement('input', { type: 'text', value: "https://commercializ3d.github.io?ref=" + selectedAccount, readOnly: true })
-						)
-					),
+					referral,
 					_react2.default.createElement(
 						'div',
 						{ styleName: 'LinkList' },
@@ -65177,7 +65184,7 @@ webpackJsonp([0],[
 			_this.state = {
 				referral: referral,
 				network: props.network,
-				selectedAccount: props.selectedAccount,
+				selectedAccount: props.selectedAccount || "",
 				contract: props.contract
 			};
 			return _this;
@@ -65194,8 +65201,6 @@ webpackJsonp([0],[
 	
 				if (!network && !selectedAccount) {
 					return _react2.default.createElement(InstallMetamask, null);
-				} else if (!selectedAccount) {
-					return _react2.default.createElement(_UnlockMetaMask2.default, null);
 				} else {
 					return _react2.default.createElement(
 						'div',
@@ -65317,28 +65322,34 @@ webpackJsonp([0],[
 			value: function withdraw() {
 				var instance = this;
 				var selectedAccount = this.state.selectedAccount;
-				this.state.contract.methods.withdrawPayments().send({ from: selectedAccount }, function (error, result) {
-					if (error) {
-						console.error(error);
-					} else {
-						var tx = result;
-						instance.showPendingTx(tx);
-					}
-				});
+	
+				if (selectedAccount) {
+					this.state.contract.methods.withdrawPayments().send({ from: selectedAccount }, function (error, result) {
+						if (error) {
+							console.error(error);
+						} else {
+							var tx = result;
+							instance.showPendingTx(tx);
+						}
+					});
+				}
 			}
 		}, {
 			key: 'endRound',
 			value: function endRound() {
 				var instance = this;
 				var selectedAccount = this.state.selectedAccount;
-				this.state.contract.methods.endGameRound().send({ from: selectedAccount }, function (error, result) {
-					if (error) {
-						console.error(error);
-					} else {
-						var tx = result;
-						instance.showPendingTx(tx);
-					}
-				});
+	
+				if (selectedAccount) {
+					this.state.contract.methods.endGameRound().send({ from: selectedAccount }, function (error, result) {
+						if (error) {
+							console.error(error);
+						} else {
+							var tx = result;
+							instance.showPendingTx(tx);
+						}
+					});
+				}
 			}
 		}, {
 			key: 'showPendingTx',
@@ -65365,17 +65376,21 @@ webpackJsonp([0],[
 			key: 'componentWillMount',
 			value: function componentWillMount() {
 				var instance = this;
-				var address = this.state.selectedAccount;
-				var contract = this.state.contract;
+				var _state = this.state,
+				    selectedAccount = _state.selectedAccount,
+				    contract = _state.contract;
 	
-				contract.methods.payments(address).call(function (error, result) {
-					if (error) {
-						console.error(error);
-					} else {
-						var balance = parseFloat(result) / Math.pow(10, 18);
-						instance.setState({ balance: balance });
-					}
-				});
+	
+				if (selectedAccount) {
+					contract.methods.payments(selectedAccount).call(function (error, result) {
+						if (error) {
+							console.error(error);
+						} else {
+							var balance = parseFloat(result) / Math.pow(10, 18);
+							instance.setState({ balance: balance });
+						}
+					});
+				}
 	
 				contract.methods.stage().call(function (error, result) {
 					if (error) {
@@ -65443,18 +65458,18 @@ webpackJsonp([0],[
 				var rows = [{ title: '1', cols: colors, imgs: row1 }, { title: '2', cols: colors, imgs: row2 }, { title: '3', cols: colors, imgs: row3 }, { title: '4', cols: colors, imgs: row4 }, { title: '5', cols: colors, imgs: row5 }, { title: '6', cols: colors, imgs: row6 }];
 	
 				var instance = this;
-				var _state = this.state,
-				    contract = _state.contract,
-				    show = _state.show,
-				    tileIndex = _state.tileIndex,
-				    price = _state.price,
-				    referral = _state.referral,
-				    jackpot = _state.jackpot,
-				    balance = _state.balance,
-				    timeRemaining = _state.timeRemaining,
-				    imgUrl = _state.imgUrl,
-				    isAuction = _state.isAuction,
-				    selectedAccount = _state.selectedAccount;
+				var _state2 = this.state,
+				    contract = _state2.contract,
+				    show = _state2.show,
+				    tileIndex = _state2.tileIndex,
+				    price = _state2.price,
+				    referral = _state2.referral,
+				    jackpot = _state2.jackpot,
+				    balance = _state2.balance,
+				    timeRemaining = _state2.timeRemaining,
+				    imgUrl = _state2.imgUrl,
+				    isAuction = _state2.isAuction,
+				    selectedAccount = _state2.selectedAccount;
 	
 	
 				var timeLeft = void 0;
@@ -65480,6 +65495,43 @@ webpackJsonp([0],[
 						);
 					}
 				}
+	
+				var balanceBlock = void 0;
+				if (selectedAccount) {
+					var balanceSubBlock = void 0;
+					if (balance > 0) {
+						balanceSubBlock = _react2.default.createElement(
+							'button',
+							{ styleName: 'WithdrawButton', className: 'left btn-success', onClick: instance.withdraw },
+							'Withdraw'
+						);
+					} else {
+						balanceSubBlock = _react2.default.createElement('div', null);
+					}
+					balanceBlock = _react2.default.createElement(
+						'div',
+						null,
+						_react2.default.createElement(
+							'p',
+							{ className: 'left', styleName: 'Balance' },
+							'Balance: ',
+							balance.toFixed(4),
+							' ETH'
+						),
+						balanceSubBlock
+					);
+				} else {
+					balanceBlock = _react2.default.createElement(
+						'div',
+						null,
+						_react2.default.createElement(
+							'p',
+							null,
+							'No Web3 - Read Only Mode'
+						)
+					);
+				}
+	
 				return _react2.default.createElement(
 					'div',
 					null,
@@ -65492,18 +65544,7 @@ webpackJsonp([0],[
 							_react2.default.createElement(
 								'div',
 								{ styleName: 'User' },
-								_react2.default.createElement(
-									'p',
-									{ className: 'left', styleName: 'Balance' },
-									'Balance: ',
-									balance.toFixed(4),
-									' ETH'
-								),
-								balance > 0 ? _react2.default.createElement(
-									'button',
-									{ styleName: 'WithdrawButton', className: 'left btn-success', onClick: instance.withdraw },
-									'Withdraw'
-								) : _react2.default.createElement('div', null)
+								balanceBlock
 							),
 							_react2.default.createElement(
 								'div',
@@ -65530,7 +65571,9 @@ webpackJsonp([0],[
 						_react2.default.createElement(
 							'div',
 							{ styleName: 'Warning' },
-							'There was an exception with the last contract, money has been returned to users. New contract is up. Good luck.'
+							'There was an exception with the last contract, money has been returned to users. ',
+							_react2.default.createElement('br', null),
+							' New contract is up. Good luck.'
 						),
 						_react2.default.createElement(
 							'div',
@@ -66177,10 +66220,20 @@ webpackJsonp([0],[
 					displayButton = "Update";
 				}
 	
-				if (isAuction && isOwned) {
+				if (!selectedAccount) {
 					buyForm = _react2.default.createElement(
 						'div',
-						{ className: 'left' },
+						{ className: 'left', styleName: 'Info' },
+						_react2.default.createElement(
+							'label',
+							null,
+							'Web3 is required to buy a square.'
+						)
+					);
+				} else if (isAuction && isOwned) {
+					buyForm = _react2.default.createElement(
+						'div',
+						{ className: 'left', styleName: 'Info' },
 						_react2.default.createElement(
 							'label',
 							null,
@@ -66190,7 +66243,7 @@ webpackJsonp([0],[
 				} else {
 					buyForm = _react2.default.createElement(
 						'div',
-						{ className: 'left' },
+						{ className: 'left', styleName: 'Info' },
 						_react2.default.createElement(
 							'label',
 							null,
@@ -66355,7 +66408,7 @@ webpackJsonp([0],[
 									),
 									_react2.default.createElement(
 										'button',
-										{ type: 'button', disabled: isOwned && isAuction || !validInput, className: 'btn btn-success', onClick: function onClick() {
+										{ type: 'button', disabled: !selectedAccount || isOwned && isAuction || !validInput, className: 'btn btn-success', onClick: function onClick() {
 												return _this2.buyTile(tileIndex);
 											} },
 										displayButton
@@ -66376,7 +66429,7 @@ webpackJsonp([0],[
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
-	module.exports = {"BuyModal":"BuyModal_BuyModal__1m4lf","BuyFormInput":"BuyModal_BuyFormInput__2ZHMi","BuyImage":"BuyModal_BuyImage__2PRRV","BuyInfo":"BuyModal_BuyInfo__Ej0uh","BuyTile":"BuyModal_BuyTile__2rCdh","OwnedBy":"BuyModal_OwnedBy__8uyVO","BuyPrice":"BuyModal_BuyPrice__3IYeM","BuyButton":"BuyModal_BuyButton__uIR_1","Error":"BuyModal_Error__28D70","BuySeparator":"BuyModal_BuySeparator__18IXL","PriceLabel":"BuyModal_PriceLabel__2bekl","BuyDetail":"BuyModal_BuyDetail__2DN2g","BuyLabel":"BuyModal_BuyLabel__13KB2"};
+	module.exports = {"BuyModal":"BuyModal_BuyModal__1m4lf","BuyFormInput":"BuyModal_BuyFormInput__2ZHMi","BuyImage":"BuyModal_BuyImage__2PRRV","BuyInfo":"BuyModal_BuyInfo__Ej0uh","BuyTile":"BuyModal_BuyTile__2rCdh","Info":"BuyModal_Info__FjIzi","OwnedBy":"BuyModal_OwnedBy__8uyVO","BuyPrice":"BuyModal_BuyPrice__3IYeM","BuyButton":"BuyModal_BuyButton__uIR_1","Error":"BuyModal_Error__28D70","BuySeparator":"BuyModal_BuySeparator__18IXL","PriceLabel":"BuyModal_PriceLabel__2bekl","BuyDetail":"BuyModal_BuyDetail__2DN2g","BuyLabel":"BuyModal_BuyLabel__13KB2"};
 
 /***/ }),
 /* 1224 */
