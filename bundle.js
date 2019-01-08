@@ -65306,6 +65306,7 @@ webpackJsonp([0],[
 				color: 0,
 				imgUrl: 0,
 				timeRemaining: 0,
+				p3dBalance: 0,
 				isAuction: false
 			};
 	
@@ -65437,6 +65438,15 @@ webpackJsonp([0],[
 						}
 					}
 				});
+	
+				contract.methods.getP3DBalance().call(function (error, result) {
+					if (error) {
+						console.error(error);
+					} else {
+						var p3dBalance = parseFloat(result) / Math.pow(10, 18);
+						instance.setState({ p3dBalance: p3dBalance });
+					}
+				});
 			}
 		}, {
 			key: 'render',
@@ -65469,7 +65479,8 @@ webpackJsonp([0],[
 				    timeRemaining = _state2.timeRemaining,
 				    imgUrl = _state2.imgUrl,
 				    isAuction = _state2.isAuction,
-				    selectedAccount = _state2.selectedAccount;
+				    selectedAccount = _state2.selectedAccount,
+				    p3dBalance = _state2.p3dBalance;
 	
 	
 				var timeLeft = void 0;
@@ -65558,8 +65569,20 @@ webpackJsonp([0],[
 									'p',
 									null,
 									'Jackpot: ',
-									jackpot.toFixed(4),
+									jackpot.toFixed(6),
 									' ETH'
+								),
+								_react2.default.createElement(
+									'p',
+									null,
+									'Winner will also receive ',
+									(p3dBalance / 4).toFixed(4),
+									' ',
+									_react2.default.createElement(
+										'a',
+										{ href: 'https://powh3d.hostedwiki.co/pages/FAQ', target: '_blank' },
+										'P3D'
+									)
 								)
 							),
 							_react2.default.createElement('div', { className: 'clear' })
@@ -65568,13 +65591,6 @@ webpackJsonp([0],[
 					_react2.default.createElement(
 						'div',
 						{ styleName: 'GameBoard' },
-						_react2.default.createElement(
-							'div',
-							{ styleName: 'Warning' },
-							'There was an exception with the last contract, money has been returned to users. ',
-							_react2.default.createElement('br', null),
-							' New contract is up. Good luck.'
-						),
 						_react2.default.createElement(
 							'div',
 							{ styleName: 'Explainer' },
@@ -65823,15 +65839,15 @@ webpackJsonp([0],[
 						{ styleName: 'GameColWrapper' },
 						_react2.default.createElement(
 							'div',
-							{ style: background, styleName: 'GameCol', onClick: function onClick() {
+							{ style: background, styleName: 'GameCol', id: "Square-" + index, onClick: function onClick() {
 									return _this2.props.showBuyModal(index, price, imgUrl);
 								} },
 							_react2.default.createElement(
 								'span',
-								null,
+								{ className: 'SquarePrice' },
 								_react2.default.createElement(
 									'p',
-									null,
+									{ 'data-id': index },
 									isAuction && isOwned ? "Sold" : this.state.price + " ETH"
 								)
 							)
